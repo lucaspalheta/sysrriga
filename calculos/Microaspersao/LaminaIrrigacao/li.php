@@ -18,7 +18,7 @@
 	   
      if($irn == "" && $ea == "" && $pas == "" && $pam == "" && $eto == "" && $kc == "" && $itn == "" && $sp == "" && $sf == ""){
 	 
-	 	  echo"<script language='javascript' type='text/javascript'>alert('Preencha os campos corretamente !');window.location.href='http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/LaminaIrrigacao/lamina_irrigacao.php';</script>";
+	 	  echo"<script language='javascript' type='text/javascript'>alert('Preencha os campos corretamente !');window.location.href='..//../../../calculos/Microaspersao/LaminaIrrigacao/lamina_irrigacao.php';</script>";
       }
 	  
 	 else{ 
@@ -105,7 +105,7 @@
 		 $_SESSION['Turno_Rega'] = $tr;
          $_SESSION['Volume_de_Agua_por_Planta'] = $vp;	
 		
-		echo"<script language='javascript' type='text/javascript'>alert('Dados Salvos Temporariamente !');window.location.href='http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/Resultados/resultados.php';</script>";
+		echo"<script language='javascript' type='text/javascript'>alert('Dados Salvos Temporariamente !');window.location.href='..//../../../calculos/Microaspersao/Resultados/resultados.php';</script>";
 
     }		
 	

@@ -1,4 +1,18 @@
-<!DOCTYPE html>
+<?php
+      session_start();
+  
+  include "valida_cookies.inc";
+  
+if((!isset ($_SESSION['nome_usuario']) == true) and (!isset ($_SESSION['senha_usuario']) == true))
+{
+	unset($_SESSION['nome_usuario']);
+	unset($_SESSION['senha_usuario']);
+	header('location:index.php');
+	}
+
+$logado = $_SESSION['nome_usuario'];
+?>
+
 <html lang="pt-br">
 <head>
 	<title>Sysrriga - Beta</title>
@@ -66,169 +80,74 @@
 <div id="wrapper">
 	<div id="leftWrapper">
 		<a href="#" class="container">
-			<img src="images/logo.png" style="padding-left: 30px;">
+			<img src="images/logo.png">
 		</a>
 		<div id="listView" class="list">
-			<li class="dropdown list-item-active">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login Usuário</b> <span class="caret"></span></a>
-				<ul id="login-dp" class="dropdown-menu">
-					<li id="login_li" class="form-login">
-						<div class="row">
-							<div class="col-md-12 input-style">
-								<form class="form form-login" role="form" method="post" action="login.php" accept-charset="UTF-8" id="login-nav">
-								<center><h3>Usuário</h3></center>
-									<div class="form-group">
-										<label class="sr-only" >Email</label>
-										<input type="email" class="form-control" id="email" name="email" placeholder="Email" >
-									</div>
-									<div class="form-group">
-										<label class="sr-only" >Senha</label>
-										<input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" >
-										<div class="help-block text-right"><a href="">Esqueceu sua senha ?</a></div>
-									</div>
-									<div class="form-group">
-										<button type="submit" class="btn btn-primary btn-block" id="status">Entrar</button>
-									</div>
-									<div class="checkbox">
-										<label class="text-left">
-											<input type="checkbox">Lembrar
-										</label>
-									</div>
-								</form>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</li>
+			<li><a href="logado.php">Home</a></li>
 
-		</div>
-		
-				<div id="listView" class="list">
-			<li class="dropdown list-item-active">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login Administrador</b> <span class="caret"></span></a>
-				<ul id="login-dp" class="dropdown-menu">
-					<li id="login_li" class="form-login">
-						<div class="row">
-							<div class="col-md-12 input-style">
-								<form class="form form-login" role="form" method="post" action="login_admin.php" accept-charset="UTF-8" id="login-nav">
-								   <center><h3>Administrador</h3></center>
-									<div class="form-group">
-										<label class="sr-only" >Nome</label>
-										<input type="nome" class="form-control" id="nome_admin" name="nome_admin" placeholder="Nome" >
-									</div>
-									<div class="form-group">
-										<label class="sr-only" >Senha</label>
-										<input type="password" class="form-control" id="senha_admin" name="senha_admin" placeholder="Senha" >
-										<div class="help-block text-right"><a href="">Esqueceu sua senha ?</a></div>
-									</div>
-									<div class="form-group">
-										<button type="submit" class="btn btn-primary btn-block" id="status">Entrar</button>
-									</div>
-									<div class="checkbox">
-										<label class="text-left">
-											<input type="checkbox">Lembrar
-										</label>
-									</div>
-								</form>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</li>
-			<li><a href="#">Fale Conosco</a></li>
 
 		</div>
 	</div>
 
-	<div id="rightWrapper">
-		<div id="header">
-			<a id="fullPage" href="#">|||</a>
+	<div id="rightWrapper" class="full-page">
+	
+		<div id="header" class="full-page log-img">
+			
+         <a id="fullPage" href="#">|||</a>
 			<a href="#">
 				<img src="images/logo.png">
 			</a>
+			<a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-smile"> <img src="images/logado3.png" alt=""/></a>
+			<form class="navbar-form  navbar-right container div-pesquisa" role="Pesquisar" style="margin-right: 250px" >
 
+					   <ul class="nav navbar-nav navbar-right">
+						  <li class="dropdown">
+							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="images/logado3.png" alt=""/> <?php echo "<font color='#FFF'> $logado </font>"; ?> </a>
+							  <ul class="dropdown-menu">
+								<li><a href="index.php#">Sair</a></li>
+							  </ul>
+						  </li>
+					  </ul>
+			</form>
 		</div>
 
 
 		<div id="contentWrapper">
 
 
-			<!--home start-->
-			<div id="home">
-
+			<div id="news">
+				<div class="container btn-lg padding-top-30"></div>
+				<div id="formulario" style="display: " class="container">
+					
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12 wwa">
+									<span name="about" ></span>
+									<h1>Relatório</h1>
+								</div>
+							</div>
+						</div>
+											
+			<form class="container form-horizontal  form-border "  id="formulario_total" role="form" method="post" action="pes_relatorio.php" >
+                    
+						<fieldset> 
+							<div class="form-group col-md-12 col-sm-12 col-xs-12 evapotranspiracao">
+								<label class="control-label color_black"><h3>Nome do Projeto:</h3></label>
+							<input type="text" name="pesquisa" class="form-control" placeholder='Nome do Projeto'>
+							
+							</div>
+	
+						</fieldset>
+					 </div>		
+					 
+				 	<br>
+				  
+					<center><button type="submit" id="cadastro_btn" class="myButton"><span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>  Pesquisar </button></center>
+				<br><br>
 				
-    
-  
-
-				<!--formulário de cadastro-->
-
-				<div id="cadas ">
-					<div class="container btn-lg padding-top-30"></div>
-					<div class="container cadastro pb300" id="cadastro_div">
-						<div class="row col-lg-offset-2 col-lg-8 cBusiness"  >
-							<div class=" col-lg-offset-1 col-md-10 cBusiness " >
-								<form class="form" role="form" method="post" action="cadastro.php" accept-charset="UTF-8"  id="cadastro_nav">
-									<h3>Cadastre-se Gratuitamente</h3>
-									<h4>E tenha acesso a todas as funções do sistema.</h4>
-									<div class="form-group">
-										<label class="sr-only" >Nome</label>
-										<input type="text" class="form-control" id="nome_cadastro" name="nome_cadastro" placeholder="Nome Completo" required>
-									</div>
-									<div class="form-group">
-										<label class="sr-only" >Email</label>
-										<input type="email" class="form-control" id="email_cadastro" name="email_cadastro" placeholder="Email" required>
-									</div>
-									<div class="form-group">
-										<label class="sr-only" >Senha</label>
-										<input type="password" class="form-control" id="senha_cadastro" name="senha_cadastro" placeholder="Senha" required>
-									</div>
-									<div class="form-group">
-										<button type="submit" id="cadastro_btn" class="btn btn-primary btn-block">Cadastrar</button>
-									</div>
-									<div class="checkbox">
-										<label>
-											<input type="checkbox"> Concordo com os <a href="" >Termos do Sysrriga.</a>
-										</label>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
+				</form>
 				</div>
-
-
-
-
-			<div id="contact">
-
-
-
-
-				<div class="lineBlack">
-					<div class="container">
-						<div class="row downLine">
-							<div class="col-md-12 text-right">
-								<!--input  id="searchPattern" type="search" name="pattern" value="Search the Site" onblur="if(this.value=='') {this.value='Search the Site'; }" onfocus="if(this.value =='Search the Site' ) this.value='';this.style.fontStyle='normal';" style="font-style: normal;"/-->
-								<input  id="searchPattern" type="search" placeholder="Procurar"/><i class="glyphicon glyphicon-search" style="font-size: 13px; color:#a5a5a5;" id="iS"></i>
-							</div>
-							<div class="col-md-6 text-left copy">
-								<p>Copyright &copy; 2016 CAPSI, IFPA-Campus CAstanhal.</p>
-							</div>
-							<div class="col-md-6 text-right dm">
-								<ul id="downMenu">
-									<li class="active"><a href="#home">Início</a></li>
-									<li><a href="#about">o que é</a></li>
-									<!--<li><a href="#project1">Projects</a></li>-->
-									<li><a href="#news">Projetos</a></li>
-									<li class="last"><a href="#contact">Contatos</a></li>
-									<!--li><a href="#features">Features</a></li-->
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
+				<!--fim do formulário-->
 
 			<script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
 			<script src="js/bootstrap.min.js"></script>

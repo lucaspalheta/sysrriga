@@ -1,11 +1,11 @@
 <?php
       session_start();
-  
+	
 if((!isset ($_SESSION['nome_usuario']) == true) and (!isset ($_SESSION['senha_usuario']) == true))
 {
 	unset($_SESSION['nome_usuario']);
 	unset($_SESSION['senha_usuario']);
-	header('location:http://localhost:8080/LabWebII/Sysrriga/index%20.php#');
+	header('location:..//../../../index.php');
 	}
 
 $logado = $_SESSION['nome_usuario'];
@@ -16,26 +16,26 @@ $logado = $_SESSION['nome_usuario'];
 	<title>Sysrriga - Beta</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="http://localhost:8080/LabWebII/Sysrriga/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="http://localhost:8080/LabWebII/Sysrriga/css/font-awesome.css">
-	<link rel='stylesheet' id='camera-css'  href='http://localhost:8080/LabWebII/Sysrriga/css/camera.css' type='text/css' media='all'>
+	<link rel="stylesheet" type="text/css" href="..//../../../css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="..//../../../css/font-awesome.css">
+	<link rel='stylesheet' id='camera-css'  href='..//../../../css/camera.css' type='text/css' media='all'>
 
-	<link rel="stylesheet" type="text/css" href="http://localhost:8080/LabWebII/Sysrriga/css/slicknav.css">
-	<link rel="stylesheet" href="http://localhost:8080/LabWebII/Sysrriga/css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
-	<link rel="stylesheet" type="text/css" href="http://localhost:8080/LabWebII/Sysrriga/css/style.css">
-	<link rel="stylesheet" href="http://localhost:8080/LabWebII/Sysrriga/css/style.css">
-	<link href="http://localhost:8080/LabWebII/Sysrriga/css/style1.css" type="text/css" rel="stylesheet" media="all">
+	<link rel="stylesheet" type="text/css" href="..//../../../css/slicknav.css">
+	<link rel="stylesheet" href="..//../../../css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="..//../../../css/style.css">
+	<link rel="stylesheet" href="..//../../../css/style.css">
+	<link href="..//../../../css/style1.css" type="text/css" rel="stylesheet" media="all">
 
 
-	<script type="text/javascript" src="http://localhost:8080/LabWebII/Sysrriga/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="..//../../../js/jquery-1.8.3.min.js"></script>
 
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700|Open+Sans:700' rel='stylesheet' type='text/css'>
-	<script type="text/javascript" src="http://localhost:8080/LabWebII/Sysrriga/js/jquery.mobile.customized.min.js"></script>
-	<script type="text/javascript" src="http://localhost:8080/LabWebII/Sysrriga/js/jquery.easing.1.3.js"></script>
-	<script type="text/javascript" src="http://localhost:8080/LabWebII/Sysrriga/js/camera.min.js"></script>
-	<script type="text/javascript" src="http://localhost:8080/LabWebII/Sysrriga/js/myscript.js"></script>
-	<script src="http://localhost:8080/LabWebII/Sysrriga/js/sorting.js" type="text/javascript"></script>
-	<script src="http://localhost:8080/LabWebII/Sysrriga/js/jquery.isotope.js" type="text/javascript"></script>
+	<script type="text/javascript" src="..//../../../js/jquery.mobile.customized.min.js"></script>
+	<script type="text/javascript" src="..//../../../js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="..//../../../js/camera.min.js"></script>
+	<script type="text/javascript" src="..//../../../js/myscript.js"></script>
+	<script src="..//../../../js/sorting.js" type="text/javascript"></script>
+	<script src="..//../../../js/jquery.isotope.js" type="text/javascript"></script>
 	<!--script type="text/javascript" src="js/jquery.nav.js"></script-->
 
 
@@ -77,44 +77,48 @@ $logado = $_SESSION['nome_usuario'];
 <div id="wrapper">
 	<div id="leftWrapper">
 		<a href="#" class="container">
-			<img src="http://localhost:8080/LabWebII/Sysrriga/images/logo.png">
+			<img src="..//../../../images/logo.png">
 		</a>
 		<div id="listView" class="list">	
-                <li>
-			         <a href="http://localhost:8080/LabWebII/Sysrriga/index2.php">Projetos</a>
+                 <li>
+			         <a href="..//../../../projeto.php">Mostrar Projeto</a>
+                </li>
+				
+				<li>
+					 <a href="..//../../../tipos_irrigacao.php">Tipos de Irrigação</a>
                 </li>
 			
 			    <li class="dropdown list-item-active">
 				    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Micro-Aspersão</b> <span class="caret"></span></a>
 			    <li>
-                    <a href="http://localhost:8080/LabWebII/Sysrriga/microaspersao.php">Dados do Microaspersor</a>
+                    <a href="..//../../../microaspersao.php">Dados do Microaspersor</a>
                 </li>
                 <li>
-                    <a href="http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/LaminaIrrigacao/lamina_irrigacao.php">Lâmina de Irrigação</a>
+                    <a href="..//../../../calculos/Microaspersao/LaminaIrrigacao/lamina_irrigacao.php">Lâmina de Irrigação</a>
                 </li>
                 <li>
-                    <a href="http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/LaminaIrrigacaoAjustada/lamina_irrigacao_ajustada.php">Lâmina de Irrigação Ajustada</a>
+                    <a href="..//../../../calculos/Microaspersao/LaminaIrrigacaoAjustada/lamina_irrigacao_ajustada.php">Lâmina de Irrigação Ajustada</a>
                 </li>
                 <li>
-                    <a href="http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/LinhaLateral/linha_lateral.php">Linha Lateral</a>
+                    <a href="..//../../../calculos/Microaspersao/LinhaLateral/linha_lateral.php">Linha Lateral</a>
                 </li>
                 <li>
-                    <a href="http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/LinhaDerivacao/linha_derivacao.php">Linha de Derivação</a>
+                    <a href="..//../../../calculos/Microaspersao/LinhaDerivacao/linha_derivacao.php">Linha de Derivação</a>
                 </li>
                 <li>
-                    <a href="http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/LinhaPrincipal/linha_principal.php">Linha Principal</a>
+                    <a href="..//../../../calculos/Microaspersao/LinhaPrincipal/linha_principal.php">Linha Principal</a>
                 </li>
                 <li>
-                    <a href="http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/LinhaRecalque/linha_recalque.php">Linha de Recalque</a>
+                    <a href="..//../../../calculos/Microaspersao/LinhaRecalque/linha_recalque.php">Linha de Recalque</a>
                 </li>
 		        <li>
-                    <a href="http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/LinhaSuccao/linha_succao.php">Linha de Sucção</a>
+                    <a href="..//../../../calculos/Microaspersao/LinhaSuccao/linha_succao.php">Linha de Sucção</a>
                 </li>
 				<li>
-                    <a href="http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/ConjuntoMotobomba/motobomba.php">Conjunto Motobomba</a>
+                    <a href="..//../../../calculos/Microaspersao/ConjuntoMotobomba/motobomba.php">Conjunto Motobomba</a>
                 </li>
 				<li>
-                    <a href="http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/Resultados/resultados.php">Resultados</a>
+                    <a href="..//../../../calculos/Microaspersao/Resultados/resultados.php">Resultados</a>
                 </li>
             </li>
 
@@ -125,15 +129,15 @@ $logado = $_SESSION['nome_usuario'];
 		<div id="header">
 			<a id="fullPage" href="#">|||</a>
 			<a href="#">
-				<img src="http://localhost:8080/LabWebII/Sysrriga/images/logo.png">
+				<img src="..//../../../images/logo.png">
 			</a>
 			<form class="navbar-form  navbar-right container div-pesquisa" role="Pesquisar" style="margin-right: 250px" >
 
 					   <ul class="nav navbar-nav navbar-right">
 						  <li class="dropdown">
-							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="http://localhost:8080/LabWebII/Sysrriga/images/logado3.png" alt=""/> <?php echo "<font color='#FFF'> $logado </font>"; ?> </a>
+							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="..//../../../images/logado3.png" alt=""/> <?php echo "<font color='#FFF'> $logado </font>"; ?> </a>
 							  <ul class="dropdown-menu">
-								<li><a href="http://localhost:8080/LabWebII/Sysrriga/index%20.php#">Sair</a></li>
+								<li><a href="..//../../../index.php">Sair</a></li>
 							  </ul>
 						  </li>
 					  </ul>
@@ -225,9 +229,9 @@ $logado = $_SESSION['nome_usuario'];
     </div>
 
 
-			<script src="http://localhost:8080/LabWebII/Sysrriga/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
-			<script src="http://localhost:8080/LabWebII/Sysrriga/js/bootstrap.min.js"></script>
-			<script src="http://localhost:8080/LabWebII/Sysrriga/js/jquery.slicknav.js"></script>
+			<script src="..//../../../js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+			<script src="..//../../../js/bootstrap.min.js"></script>
+			<script src="..//../../../js/jquery.slicknav.js"></script>
 			<script>
 				$(document).ready(function(){
 					$(".bhide").click(function(){
@@ -359,7 +363,7 @@ $logado = $_SESSION['nome_usuario'];
 </div>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-<script src="http://localhost:8080/LabWebII/Sysrriga/js/index.js"></script>
+<script src="..//../../../js/index.js"></script>
 
 
 

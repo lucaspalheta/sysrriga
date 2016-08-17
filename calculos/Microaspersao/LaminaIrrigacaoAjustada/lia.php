@@ -8,7 +8,7 @@ session_start();
 	   
      if($tra == "" && $etc == "" && $ea == "" || $tra == "" || $etc == "" || $ea == "")
 	 { 
-	     echo"<script language='javascript' type='text/javascript'>alert('Preencha os campos corretamente !');window.location.href='http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/LaminaIrrigacaoAjustada/lamina_irrigacao_ajustada.php';</script>";
+	     echo"<script language='javascript' type='text/javascript'>alert('Preencha os campos corretamente !');window.location.href='..//../../../calculos/Microaspersao/LaminaIrrigacaoAjustada/lamina_irrigacao_ajustada.php';</script>";
       }	
      else{ 	 
      $_SESSION['tra'] = $tra;
@@ -42,7 +42,7 @@ session_start();
 		
      $_SESSION['lba'] = $lba;
 
-     echo"<script language='javascript' type='text/javascript'>alert('Dados Salvos Temporariamente !');window.location.href='http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/Resultados/resultados.php';</script>";
+     echo"<script language='javascript' type='text/javascript'>alert('Dados Salvos Temporariamente !');window.location.href='..//../../../calculos/Microaspersao/Resultados/resultados.php';</script>";
 	}
         ?>
 		

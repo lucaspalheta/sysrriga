@@ -108,7 +108,7 @@
      $linhas = mysql_num_rows($resultado);
  
        if($linhas == 0){
-         echo"<script language='javascript' type='text/javascript'>alert('Nenhum dado foi encontrado !');window.location.href='http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/Resultados/resultados.php';</script>";
+         echo"<script language='javascript' type='text/javascript'>alert('Nenhum dado foi encontrado !');window.location.href='..//../../../calculos/Microaspersao/Resultados/resultados.php';</script>";
        }
   
         if($linhas != 0){
@@ -126,7 +126,7 @@
        $linhas2 = mysql_num_rows($resultado2);
  
        if($linhas2 == 0){
-         echo"<script language='javascript' type='text/javascript'>alert('Nenhum dado foi encontrado !');window.location.href='http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/Resultados/resultados.php';</script>";
+         echo"<script language='javascript' type='text/javascript'>alert('Nenhum dado foi encontrado !');window.location.href='..//../../../calculos/Microaspersao/Resultados/resultados.php';</script>";
        }
   
         if($linhas2 != 0){

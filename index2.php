@@ -89,9 +89,9 @@ $logado = $_SESSION['nome_usuario'];
 		</div>
 	</div>
 
-	<div id="rightWrapper" class="full-page">
+	<div id="rightWrapper">
 	
-		<div id="header" class="full-page log-img">
+		<div id="header">
 			
          <a id="fullPage" href="#">|||</a>
 			<a href="#">
@@ -101,7 +101,7 @@ $logado = $_SESSION['nome_usuario'];
 
 					   <ul class="nav navbar-nav navbar-right">
 						  <li class="dropdown">
-							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="http://localhost:8080/LabWebII/Sysrriga/images/logado3.png" alt=""/> <?php echo "<font color='#FFF'> $logado </font>"; ?> </a>
+							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="images/logado3.png" alt=""/> <?php echo "<font color='#FFF'> $logado </font>"; ?> </a>
 							  <ul class="dropdown-menu">
 								<li><a href="index.php#">Sair</a></li>
 							  </ul>
@@ -160,7 +160,7 @@ $logado = $_SESSION['nome_usuario'];
 								<label class="control-label color_black">Técnico Responsável</label><input type="text" class="form-control" name='proj_Tecnico_Responsavel' id="proj_Tecnico_Responsavel" placeholder='Técnico Responsável *'/>
 							</div>
 							<div class="form-group col-md-12 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Nº CREA</label><input type="text" class="form-control" name='proj_CREA' id="proj_CREA" placeholder='Nº CREA '/>
+								<label class="control-label color_black">Nº CREA</label><input type="text" class="form-control" name='proj_CREA' id="proj_CREA" placeholder='Nº CREA *'/>
 							</div>
 							<div class="form-group col-md-12 col-sm-12 col-xs-12 evapotranspiracao">
 								<label class="control-label color_black">Proprietário</label><input type="text" class="form-control" name='proj_Proprietario' id="proj_Proprietario" placeholder='Proprietário *'>
@@ -199,7 +199,7 @@ $logado = $_SESSION['nome_usuario'];
 								<label class="control-label color_black">Endereço</label><input type="text" class="form-control" name='prop_endereco' id="prop_endereco" placeholder='Endereço *'/>
 							</div>
 							<div class="form-group col-md-12 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">CEP</label><input type="text" class="form-control" name='prop_cep' id="prop_cep" placeholder='CEP '/>
+								<label class="control-label color_black">CEP</label><input type="number" class="form-control" name='prop_cep' id="prop_cep" placeholder='CEP *'/>
 							</div>
 							<div class="form-group col-md-12 col-sm-12 col-xs-12 evapotranspiracao">
 								<label class="control-label color_black">Cidade</label><input type="text" class="form-control" name='prop_cidade' id="prop_cidade" placeholder='Cidade *'>
@@ -233,23 +233,23 @@ $logado = $_SESSION['nome_usuario'];
 
 						<fieldset>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Evapotranspiração de Referência (ETo)</label><input type="text" class="form-control " name='evapotranspiracao_de_referencia' id="evapotranspiracao_de_referencia" placeholder='Evapotranspiração de Referência (ETo)'/>
+								<label class="control-label color_black">Evapotranspiração de Referência (ETo)</label><input type="number" class="form-control " name='evapotranspiracao_de_referencia' id="evapotranspiracao_de_referencia" placeholder='Evapotranspiração de Referência (ETo) *'/>
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Disponibilidade Total de Água (DTA)</label><input type="text" class="form-control " name='disponibilidade_total_de_agua' id="disponibilidade_total_de_agua" placeholder='Disponibilidade Total de Água (DTA)'/>
+								<label class="control-label color_black">Disponibilidade Total de Água (DTA)</label><input type="number" class="form-control " name='disponibilidade_total_de_agua' id="disponibilidade_total_de_agua" placeholder='Disponibilidade Total de Água (DTA) *'/>
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Eficiência de Aplicação (EA)</label><input type="text" class="form-control " name='eficiencia_de_aplicacao' id="eficiencia_de_aplicacao" placeholder='Eficiência de Aplicação (EA)'>
+								<label class="control-label color_black">Eficiência de Aplicação (EA)</label><input type="number" class="form-control " name='eficiencia_de_aplicacao' id="eficiencia_de_aplicacao" placeholder='Eficiência de Aplicação (EA) *'>
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Horas de Funcionamento</label><input type="text" class="form-control " name='horas_de_funcionamento' id="horas_de_funcionamento" placeholder='Horas de Funcionamento'>
+								<label class="control-label color_black">Horas de Funcionamento</label><input type="number" class="form-control " name='horas_de_funcionamento' id="horas_de_funcionamento" placeholder='Horas de Funcionamento *'>
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Turno de Rega (TR)</label><input type="text" class="form-control " name='turno_de_rega' id="turno_de_rega" placeholder='Turno de Rega (TR)'>
+								<label class="control-label color_black">Turno de Rega (TR)</label><input type="number" class="form-control " name='turno_de_rega' id="turno_de_rega" placeholder='Turno de Rega (TR) *'>
 								<!--se o turno de rega for de 4,4 dias adota-se 4 e ajusta-se a IRN para os 4 dias-->
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Dias de Folga</label><input type="text" class="form-control " name='dias_de_folga' id="dias_de_folga" placeholder='Dias de Folga'>
+								<label class="control-label color_black">Dias de Folga</label><input type="number" class="form-control " name='dias_de_folga' id="dias_de_folga" placeholder='Dias de Folga *'>
 							</div>
 						</fieldset>
 							</ul>
@@ -282,31 +282,31 @@ $logado = $_SESSION['nome_usuario'];
 								<label class="control-label color_black">Largura</label><input type="number" class="form-control " name='Largura' placeholder='Largura' id="Largura" />
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Comprimento</label><input type="text" class="form-control  " name='Comprimento' placeholder='Comprimento' id="Comprimento" onblur="areaRemover essa parte do código para funcionar()"/>
+								<label class="control-label color_black">Comprimento</label><input type="number" class="form-control" name='Comprimento' placeholder='Comprimento *' id="Comprimento" onblur="areaRemover essa parte do código para funcionar()"/>
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">DN da Linha Principal</label><input type="text" class="form-control " name='DN_da_Linha_Principal' placeholder='DN da Linha Principal' id="DN_da_Linha_Principal" />
+								<label class="control-label color_black">DN da Linha Principal</label><input type="number" class="form-control " name='DN_da_Linha_Principal' placeholder='DN da Linha Principal *' id="DN_da_Linha_Principal" />
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">DN da Linha Lateral</label><input type="text" class="form-control " name='DN_da_Linha_Lateral' id="dn_da_linha_lateral" placeholder='DN da Linha Lateral'/>
+								<label class="control-label color_black">DN da Linha Lateral</label><input type="number" class="form-control " name='DN_da_Linha_Lateral' id="dn_da_linha_lateral" placeholder='DN da Linha Lateral *'/>
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Comprimento da Linha de Recalque</label><input type="text" class="form-control " name='Comprimento_da_Linha_de_Recalque' placeholder='Comprimento da Linha de Recalque'/>
+								<label class="control-label color_black">Comprimento da Linha de Recalque</label><input type="number" class="form-control " name='Comprimento_da_Linha_de_Recalque' placeholder='Comprimento da Linha de Recalque *'/>
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Comprimento da Linha de Sucção</label><input type="text" class="form-control " name='Comprimento_da_Linha_de_Succao' placeholder='Comprimento da Linha de Sucção'>
+								<label class="control-label color_black">Comprimento da Linha de Sucção</label><input type="number" class="form-control " name='Comprimento_da_Linha_de_Succao' placeholder='Comprimento da Linha de Sucção *'>
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">DN da Linha de Recalque</label><input type="text" class="form-control " name='DN_da_Linha_de_Recalque' placeholder='DN da Linha de Recalque'>
+								<label class="control-label color_black">DN da Linha de Recalque</label><input type="number" class="form-control " name='DN_da_Linha_de_Recalque' placeholder='DN da Linha de Recalque *'>
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">DN da Linha de Sucção</label><input type="text" class="form-control " name='DN_da_Linha_de_Succao' placeholder='DN da Linha de Sucção'>
+								<label class="control-label color_black">DN da Linha de Sucção</label><input type="number" class="form-control " name='DN_da_Linha_de_Succao' placeholder='DN da Linha de Sucção *'>
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Tempo de Funcionamento</label><input type="text" class="form-control " name='Tempo_de_Funcionamento' placeholder='Tempo de Funcionamento'>
+								<label class="control-label color_black">Tempo de Funcionamento</label><input type="number" class="form-control " name='Tempo_de_Funcionamento' placeholder='Tempo de Funcionamento *'>
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Número Total de Setores</label><input type="text" class="form-control " name='Numero_Total_de_Setores' placeholder='Número Total de Setores'>
+								<label class="control-label color_black">Número Total de Setores</label><input type="number" class="form-control " name='Numero_Total_de_Setores' placeholder='Número Total de Setores *'>
 							</div>
 						</fieldset>
 							</ul>
@@ -341,25 +341,25 @@ $logado = $_SESSION['nome_usuario'];
 								<label class="control-label color_black">Data de Plantio</label><input type="date" class="form-control  " name='Data_de_Plantio' placeholder='Data de Plantio'/>
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Espaçamento entre Plantas</label><input type="text" class="form-control " name='Espacamento_entre_Plantas' placeholder='Espaçamento entre Plantas'/>
+								<label class="control-label color_black">Espaçamento entre Plantas</label><input type="number" class="form-control " name='Espacamento_entre_Plantas' placeholder='Espaçamento entre Plantas *'/>
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Espaçamento entre Fileiras</label><input type="text" class="form-control " name='Espacamento_entre_Fileiras' placeholder='Espaçamento entre Fileiras'/>
+								<label class="control-label color_black">Espaçamento entre Fileiras</label><input type="number" class="form-control " name='Espacamento_entre_Fileiras' placeholder='Espaçamento entre Fileiras *'/>
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Área Sombreda</label><input type="text" class="form-control " name='Area_Sombreada' placeholder='Área Sombreda'/>
+								<label class="control-label color_black">Área Sombreda</label><input type="number" class="form-control " name='Area_Sombreada' placeholder='Área Sombreda *'/>
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Profundidade Efetiva do Sistema Radicular (Z)</label><input type="text" class="form-control " name='Profundidade_Efetiva_Sistema_Radicular' placeholder='Profundidade Efetiva do Sistema Radicular (Z)'/>
+								<label class="control-label color_black">Profundidade Efetiva do Sistema Radicular (Z)</label><input type="number" class="form-control " name='Profundidade_Efetiva_Sistema_Radicular' placeholder='Profundidade Efetiva do Sistema Radicular (Z) *'/>
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Fator de Disponibilidade (f)</label><input type="text" class="form-control " name='Fator_de_Disponibilidade' id="Fator_de_Disponibilidade" placeholder='Fator de Disponibilidade (f)'>
+								<label class="control-label color_black">Fator de Disponibilidade (f)</label><input type="number" class="form-control " name='Fator_de_Disponibilidade' id="Fator_de_Disponibilidade" placeholder='Fator de Disponibilidade (f) *'>
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Coeficiente de Cultivo (Kc)</label><input type="text" class="form-control " name='Coeficiente_de_Cultivo' id="Coeficiente_de_Cultivo" placeholder='Coeficiente de Cultivo (Kc)'>
+								<label class="control-label color_black">Coeficiente de Cultivo (Kc)</label><input type="number" class="form-control " name='Coeficiente_de_Cultivo' id="Coeficiente_de_Cultivo" placeholder='Coeficiente de Cultivo (Kc) *'>
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Evapotranspiração da Cultura (ETc)</label><input type="text" class="form-control " name='Evapotranspiracao_da_Cultura' placeholder='Evapotranspiração da Cultura (ETc)'>
+								<label class="control-label color_black">Evapotranspiração da Cultura (ETc)</label><input type="number" class="form-control " name='Evapotranspiracao_da_Cultura' placeholder='Evapotranspiração da Cultura (ETc) *'>
 							</div>
 						</fieldset>
 							</ul>
@@ -388,28 +388,28 @@ $logado = $_SESSION['nome_usuario'];
 
 						<fieldset>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Capacidade de Campo (CC)</label><input type="text" class="form-control  " name='capacidade_de_campo' id="capacidade_de_campo" placeholder='Capacidade de Campo (CC)'/>
+								<label class="control-label color_black">Capacidade de Campo (CC)</label><input type="number" class="form-control  " name='capacidade_de_campo' id="capacidade_de_campo" placeholder='Capacidade de Campo (CC)'/>
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Ponto de Murchamento (PM)</label><input type="text" class="form-control " name='ponto_de_murchamento' id="ponto_de_murchamento" placeholder='Ponto de Murchamento (PM)'/>
+								<label class="control-label color_black">Ponto de Murchamento (PM)</label><input type="number" class="form-control " name='ponto_de_murchamento' id="ponto_de_murchamento" placeholder='Ponto de Murchamento (PM)'/>
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Densidade-do-Solo (ds)</label><input type="text" class="form-control " name='densidade_do_solo' id="densidade_do_solo" placeholder='Densidade-do-Solo (ds)' onblur="irnremover esse pedaço para que o código funcione)()" >
+								<label class="control-label color_black">Densidade-do-Solo (ds)</label><input type="number" class="form-control " name='densidade_do_solo' id="densidade_do_solo" placeholder='Densidade-do-Solo (ds)' onblur="irnremover esse pedaço para que o código funcione)()" >
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Irrigacao Real Necessária (IRN)</label><input type="text" class="form-control " name='irrigacao_real_necessaria' id="irrigacao_real_necessaria" placeholder='Irrigacao Real Necessária (IRN)'>
+								<label class="control-label color_black">Irrigacao Real Necessária (IRN)</label><input type="number" class="form-control " name='irrigacao_real_necessaria' id="irrigacao_real_necessaria" placeholder='Irrigacao Real Necessária (IRN)'>
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Irrigacao Total Necessária (ITN)</label><input type="text" class="form-control " name='irrigaca_total_necessaria' id="irrigaca_total_necessaria" placeholder='Irrigacao Total Necessária (ITN)'>
+								<label class="control-label color_black">Irrigacao Total Necessária (ITN)</label><input type="number" class="form-control " name='irrigaca_total_necessaria' id="irrigaca_total_necessaria" placeholder='Irrigacao Total Necessária (ITN)'>
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Capacidade Real de Água no Solo (CRA)</label><input type="text" class="form-control " name='capacidade_real_de_agua_no_solo' id="capacidade_real_de_agua_no_solo" placeholder='Capacidade Real de Água no Solo (CRA)'>
+								<label class="control-label color_black">Capacidade Real de Água no Solo (CRA)</label><input type="number" class="form-control " name='capacidade_real_de_agua_no_solo' id="capacidade_real_de_agua_no_solo" placeholder='Capacidade Real de Água no Solo (CRA)'>
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Capacidade Total de Água no Solo (CTA)</label><input type="text" class="form-control " name='capacidade_total_de_agua_no_solo' id="capacidade_total_de_agua_no_solo" placeholder='Capacidade Total de Água no Solo (CTA)'/>
+								<label class="control-label color_black">Capacidade Total de Água no Solo (CTA)</label><input type="number" class="form-control " name='capacidade_total_de_agua_no_solo' id="capacidade_total_de_agua_no_solo" placeholder='Capacidade Total de Água no Solo (CTA)'/>
 							</div>
 							<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
-								<label class="control-label color_black">Velocidade de Infiltração Básica (Vib)</label><input type="text" class="form-control " name='velocidade_de_infiltracao_basica' id="velocidade_de_infiltracao_basica" placeholder='Velocidade de Infiltração Básica (Vib)'/>
+								<label class="control-label color_black">Velocidade de Infiltração Básica (Vib)</label><input type="number" class="form-control " name='velocidade_de_infiltracao_basica' id="velocidade_de_infiltracao_basica" placeholder='Velocidade de Infiltração Básica (Vib)'/>
 							</div>
 						</fieldset>
 

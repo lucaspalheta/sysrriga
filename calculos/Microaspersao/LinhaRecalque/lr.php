@@ -11,7 +11,7 @@
 	   
      if($qlr == "" && $vmlr == "" && $crlr == "" && $clr == ""){
 	 
-	 	  echo"<script language='javascript' type='text/javascript'>alert('Preencha os campos corretamente !');window.location.href='http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/LinhaRecalque/linha_recalque.php';</script>";
+	 	  echo"<script language='javascript' type='text/javascript'>alert('Preencha os campos corretamente !');window.location.href='..//../../../calculos/Microaspersao/LinhaRecalque/linha_recalque.php';</script>";
       }
 	  
 	 else{ 
@@ -56,7 +56,7 @@
 
 
 		
-		echo"<script language='javascript' type='text/javascript'>alert('Dados Salvos Temporariamente !');window.location.href='http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/Resultados/resultados.php';</script>";
+		echo"<script language='javascript' type='text/javascript'>alert('Dados Salvos Temporariamente !');window.location.href='..//../../../calculos/Microaspersao/Resultados/resultados.php';</script>";
 
     }		
 	

@@ -10,7 +10,7 @@
 	   
      if($qls == "" && $vmls == "" && $crls == "" && $cls == ""){
 	 
-	 	  echo"<script language='javascript' type='text/javascript'>alert('Preencha os campos corretamente !');window.location.href='http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/LinhaSuccao/linha_succao.php';</script>";
+	 	  echo"<script language='javascript' type='text/javascript'>alert('Preencha os campos corretamente !');window.location.href='..//../../../calculos/Microaspersao/LinhaSuccao/linha_succao.php';</script>";
       }
 	  
 	 else{ 
@@ -59,7 +59,7 @@
 
 
 		
-		echo"<script language='javascript' type='text/javascript'>alert('Dados Salvos Temporariamente !');window.location.href='http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/Resultados/resultados.php';</script>";
+		echo"<script language='javascript' type='text/javascript'>alert('Dados Salvos Temporariamente !');window.location.href='..//../../../calculos/Microaspersao/Resultados/resultados.php';</script>";
 
     }		
 	

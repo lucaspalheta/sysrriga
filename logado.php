@@ -7,10 +7,11 @@ if((!isset ($_SESSION['nome_usuario']) == true) and (!isset ($_SESSION['senha_us
 {
 	unset($_SESSION['nome_usuario']);
 	unset($_SESSION['senha_usuario']);
-	header('location:http://localhost:8080/LabWebII/Sysrriga/index.php');
+	header('location:index.php');
 	}
 
 $logado = $_SESSION['nome_usuario'];
+
 ?>
 
 <html lang="pt-br">
@@ -99,12 +100,12 @@ $logado = $_SESSION['nome_usuario'];
 			<a href="#">
 				<img src="images/logo.png">
 			</a>
-			<a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-smile"> <img src="http://localhost:8080/LabWebII/Sysrriga/images/logado3.png" alt=""/></a>
+			<a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-smile"> <img src="images/logado3.png" alt=""/></a>
 			<form class="navbar-form  navbar-right container div-pesquisa" role="Pesquisar" style="margin-right: 250px" >
 
 					   <ul class="nav navbar-nav navbar-right">
 						  <li class="dropdown">
-							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="http://localhost:8080/LabWebII/Sysrriga/images/logado3.png" alt=""/> <?php echo "<font color='#FFF'> $logado </font>"; ?> </a>
+							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="images/logado3.png" alt=""/> <?php echo "<font color='#FFF'> $logado </font>"; ?> </a>
 							  <ul class="dropdown-menu">
 								<li><a href="index.php">Sair</a></li>
 							  </ul>
@@ -121,8 +122,10 @@ $logado = $_SESSION['nome_usuario'];
 				<div id="formulario"  class="container">
 
 				<div class="welcome"> 
-					<h2><?php echo " Olá <font color='red'> $nome_usuario </font>"; ?></h2>
-					<h4>Seja bem vindo ao Sysrriga, aqui você encontrará uma maneira prática de dimensionar o seu projeto de irrigação!</h4>
+					<h2><?php 
+
+					echo " Olá <font color='red'> $logado </font>"; ?></h2>
+					<h4>Seja bem vindo ao Sysrriga, aqui você encontrará uma maneira prática de dimensionar o seu projeto de irrigação!</h4><br><br>
 				</div>
 				
 				
@@ -133,7 +136,7 @@ $logado = $_SESSION['nome_usuario'];
 						
 						
 							<ul id="info-gotejamento" class="col-lg-12 ">
-								<li class="info-01 col-lg-4"><a href="#"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>  Relatório</a></li>
+								<li class="info-01 col-lg-4"><a href="relatorio.php"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>  Relatório</a></li>
 								<li class="info-02 col-lg-4"><a href="pesquisa.php"><span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>  Pesquisar Projeto</a></li>
 								<li class="info-03 col-lg-4"><a href="projeto.php"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>  Mostrar Projeto</a></li>
 							</ul>
