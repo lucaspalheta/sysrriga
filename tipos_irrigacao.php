@@ -26,7 +26,7 @@ $logado = $_SESSION['nome_usuario'];
 	<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" href="css/style.css">
-	<link href="http://localhost:8080/LabWebII/Sysrriga/css/style1.css" type="text/css" rel="stylesheet" media="all">
+	<link href="css/style1.css" type="text/css" rel="stylesheet" media="all">
 
 
 	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
@@ -99,14 +99,14 @@ $logado = $_SESSION['nome_usuario'];
 			<a href="#">
 				<img src="images/logo.png">
 			</a>
-			<a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-smile"> <img src="http://localhost:8080/LabWebII/Sysrriga/images/logado3.png" alt=""/></a>
+			<a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-smile"></a>
 			<form class="navbar-form  navbar-right container div-pesquisa" role="Pesquisar" style="margin-right: 250px" >
 
 					   <ul class="nav navbar-nav navbar-right">
 						  <li class="dropdown">
-							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="http://localhost:8080/LabWebII/Sysrriga/images/logado3.png" alt=""/> <?php echo "<font color='#FFF'> $logado </font>"; ?> </a>
+							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="images/logado3.png" alt=""/> <?php echo "<font color='#FFF'> $logado </font>"; ?> </a>
 							  <ul class="dropdown-menu">
-								<li><a href="http://localhost:8080/LabWebII/Sysrriga/index.php#">Sair</a></li>
+								<li><a href="index.php">Sair</a></li>
 							  </ul>
 						  </li>
 					  </ul>
@@ -116,38 +116,32 @@ $logado = $_SESSION['nome_usuario'];
 
 
 		<div id="contentWrapper">
-
-		<div id="news">
+				
+				<div id="news">
 				<div class="container btn-lg padding-top-30"></div>
 				<div id="formulario"  class="container">
-
 				
-
+				
 					<div class="fltr2">
 						<center>
 			<form class="container" >
-
-
-
-							<ul  class="col-lg-12">
+						
+                             <ul id="info-gotejamento" class="col-lg-12 ">
 							<br><h1>Tipos de Irrigação</h1><hr>
 								<li class="info-01 col-lg-4"><a href="aspersao.php">Aspersão</a></li>
 								<li class="info-02 col-lg-4"><a href="gotejamento.php">Gotejamento</a></li>
 								<li class="info-03 col-lg-4"><a href="microaspersao.php">Micro-Aspersão</a></li>
 							</ul>
-
-
-
+			
 			</form>
 						</center>
 					</div>
 
-				</div>
-
-
-
-
+			
+			
+			
 			</div>
+
 <!--div de corpo da página-->
 			
 		

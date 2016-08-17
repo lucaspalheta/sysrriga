@@ -136,7 +136,7 @@ $logado = $_SESSION['nome_usuario'];
 
 					   <ul class="nav navbar-nav navbar-right">
 						  <li class="dropdown">
-							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="http://localhost:8080/LabWebII/Sysrriga/images/logado3.png" alt=""/> <?php echo "<font color='#FFF'> $logado </font>"; ?> </a>
+							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="..//../../../images/logado3.png" alt=""/> <?php echo "<font color='#FFF'> $logado </font>"; ?> </a>
 							  <ul class="dropdown-menu">
 								<li><a href="..//../../../index.php">Sair</a></li>
 							  </ul>
@@ -1334,7 +1334,7 @@ $logado = $_SESSION['nome_usuario'];
 				</div>
 				<br><br>
 				   
-				   <center><a href="..//../../../salvar_dados_gotejamento.php" class="myButton"><font color='#FFF'>Salvar Dados</font></a></center>
+				   <center><a href="..//../../../salvar_dados_gotejamento.php" class="myButton">Salvar Dados</a></center>
 					
 				<br><br>	
                      </div>        <!-- /#page-content-wrapper -->

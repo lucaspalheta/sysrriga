@@ -7,7 +7,7 @@ if((!isset ($_SESSION['nome_usuario']) == true) and (!isset ($_SESSION['senha_us
 {
 	unset($_SESSION['nome_usuario']);
 	unset($_SESSION['senha_usuario']);
-	header('location:Sysrriga/index.php');
+	header('location:index.php');
 	}
 
 $logado = $_SESSION['nome_usuario'];
@@ -101,7 +101,7 @@ $logado = $_SESSION['nome_usuario'];
 
 					   <ul class="nav navbar-nav navbar-right">
 						  <li class="dropdown">
-							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="http://localhost:8080/LabWebII/Sysrriga/images/logado3.png" alt=""/> <?php echo "<font color='#FFF'> $logado </font>"; ?> </a>
+							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="images/logado3.png" alt=""/> <?php echo "<font color='#FFF'> $logado </font>"; ?> </a>
 							  <ul class="dropdown-menu">
 								<li><a href="index.php">Sair</a></li>
 							  </ul>
@@ -146,7 +146,8 @@ $logado = $_SESSION['nome_usuario'];
                               $qr    = mysql_query($sql) or die(mysql_error());
                               $ln    = mysql_fetch_assoc($qr);
                                
-                              $nome_do_projeto = $ln['proj_nome'];
+                              $id_projeto = $ln['id_projeto']; $_SESSION['id_projeto_alterar'] = $ln['id_projeto'];
+							  $nome_do_projeto = $ln['proj_nome'];
 							  $tec = $ln['proj_tecResponsavel'];
 							  $crea = $ln['proj_nCrea'];
 							  $proprietario = $ln['proj_proprietario'];
@@ -660,7 +661,7 @@ $logado = $_SESSION['nome_usuario'];
 							  $micro_media_consumo_cv = $ln33['micro_media_consumo_cv'];
 							  $micro_media_consumo_kw = $ln33['micro_media_consumo_kw'];							  
 				   
-						  echo "<center><h1><font color='#006400'> Projeto $nome_do_projeto </font></h1></center><hr>";
+						  echo "<center><h1><font color='#006400'> Projeto $nome_do_projeto</font></h1></center><hr>";
 						  
 						  /* dados do projeto */
 						
@@ -686,6 +687,40 @@ $logado = $_SESSION['nome_usuario'];
 
 						
 						echo '<fieldset>';
+						
+		 echo '<div id="listView" class="list">';
+			echo '<li class="dropdown list-item-active">';
+				echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown"><b><font color="#000000"><center>Alterar Dados do Projeto</center></font></b> <span class="caret"></span></a>';
+				echo '<ul id="login-dp" class="dropdown-menu">';
+					echo '<li id="login_li" class="form-login">';
+						echo '<div class="row">';
+							echo '<div class="col-md-12 input-style">';
+								echo '<form class="form form-login" role="form" method="post" action="alterar_dados_do_projeto.php" accept-charset="UTF-8" id="login-nav">';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Tecnico Responsavel</label>';
+										echo '<input type="name" class="form-control" id="tec" name="tec" placeholder="Tecnico Responsavel" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Nº CREA</label>';
+										echo '<input type="name" class="form-control" id="crea" name="crea" placeholder="Nº CREA" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Proprietario</label>';
+										echo '<input type="name" class="form-control" id="proprietario" name="proprietario" placeholder="Proprietario" >';
+									echo '</div>';
+									echo '<div class="form-group">';
+										echo '<button type="submit" class="btn btn-primary btn-block" id="status">Alterar</button>';
+									echo '</div>';
+								echo '</form>';
+							echo '</div>';
+						echo '</div>';
+					echo '</li>';
+				echo '</ul>';
+			echo '</li>';
+        echo '</div>';	
 
                           echo "<h4>";
 						  echo "&nbsp&nbsp Tecnico Responsavel: ";
@@ -705,7 +740,8 @@ $logado = $_SESSION['nome_usuario'];
 								 <td>'.$proprietario.'</td>
                               </tr>';
 						  echo "<br>";	  
-                        echo "</h4>";						
+                        echo "</h4>";
+					  echo "<br><br>";						
 							
 						echo '</fieldset>';
 
@@ -736,6 +772,45 @@ $logado = $_SESSION['nome_usuario'];
 
 						
 						echo '<fieldset>';
+						
+		echo '<div id="listView" class="list">';
+			echo '<li class="dropdown list-item-active">';
+				echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown"><b><font color="#000000"><center>Alterar Dados da Propriedade</center></font></b> <span class="caret"></span></a>';
+				echo '<ul id="login-dp" class="dropdown-menu">';
+					echo '<li id="login_li" class="form-login">';
+						echo '<div class="row">';
+							echo '<div class="col-md-12 input-style">';
+								echo '<form class="form form-login" role="form" method="post" action="alterar_dados_da_propriedade.php" accept-charset="UTF-8" id="login-nav">';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Nome</label>';
+										echo '<input type="name" class="form-control" id="nome_propriedade" name="nome_propriedade" placeholder="Nome" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Endereço</label>';
+										echo '<input type="name" class="form-control" id="end_propriedade" name="end_propriedade" placeholder="Endereço" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >CEP</label>';
+										echo '<input type="name" class="form-control" id="cep_propriedade" name="cep_propriedade" placeholder="CEP" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Cidade</label>';
+										echo '<input type="name" class="form-control" id="cidade_propriedade" name="cidade_propriedade" placeholder="Cidade" >';
+									echo '</div>';
+									echo '<div class="form-group">';
+										echo '<button type="submit" class="btn btn-primary btn-block" id="status">Alterar</button>';
+									echo '</div>';
+								echo '</form>';
+							echo '</div>';
+						echo '</div>';
+					echo '</li>';
+				echo '</ul>';
+			echo '</li>';
+        echo '</div>';
 
                           echo "<h4>";
 						  echo "&nbsp&nbsp Nome: ";
@@ -760,13 +835,13 @@ $logado = $_SESSION['nome_usuario'];
                           echo '<tr>								
 								 <td>'.$cidade.'</td>
                               </tr>';
-						  echo "<br>";						  
-                        echo "</h4>";				
+						  echo "<br><br><br>";						  
+                        echo "</h4>";							
 							
 						echo '</fieldset>';
 
 							echo '</ul>';	  
-                              
+               
 					  
 						/* dados gerais */	  
 							  
@@ -792,6 +867,56 @@ $logado = $_SESSION['nome_usuario'];
 
 						
 						echo '<fieldset>';
+						
+		echo '<div id="listView" class="list">';
+			echo '<li class="dropdown list-item-active">';
+				echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown"><b><font color="#000000"><center>Alterar Dados Gerais</center></font></b> <span class="caret"></span></a>';
+				echo '<ul id="login-dp" class="dropdown-menu">';
+					echo '<li id="login_li" class="form-login">';
+						echo '<div class="row">';
+							echo '<div class="col-md-12 input-style">';
+								echo '<form class="form form-login" role="form" method="post" action="alterar_dados_gerais.php" accept-charset="UTF-8" id="login-nav">';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Evapotranspiração de Referência (ETo)</label>';
+										echo '<input type="name" class="form-control" id="eto" name="eto" placeholder="Evapotranspiração de Referência (ETo)" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Disponibilidade Total de Água (DTA)</label>';
+										echo '<input type="name" class="form-control" id="dta" name="dta" placeholder="Disponibilidade Total de Água (DTA)" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Eficiência de Aplicação (EA)</label>';
+										echo '<input type="name" class="form-control" id="ea" name="ea" placeholder="Eficiência de Aplicação (EA)" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Horas de Funcionamento</label>';
+										echo '<input type="name" class="form-control" id="hf" name="hf" placeholder="Horas de Funcionamento" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Turno de Rega (TR)</label>';
+										echo '<input type="name" class="form-control" id="tr" name="tr" placeholder="Turno de Rega (TR)" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Dias de Folga</label>';
+										echo '<input type="name" class="form-control" id="df" name="df" placeholder="Dias de Folga" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<button type="submit" class="btn btn-primary btn-block" id="status">Alterar</button>';
+									echo '</div>';
+								echo '</form>';
+							echo '</div>';
+						echo '</div>';
+					echo '</li>';
+				echo '</ul>';
+			echo '</li>';
+        echo '</div>';
 
                           echo "<h4>";
 						  echo "&nbsp&nbsp Evapotranspiração de Referência (ETo): ";
@@ -800,7 +925,7 @@ $logado = $_SESSION['nome_usuario'];
 								 </tr>';
 						  echo "<br><br>";	
 						  
-                          echo "&nbsp&nbsp Disponibilidade  Total de Água (DTA): ";						  
+                          echo "&nbsp&nbsp Disponibilidade Total de Água (DTA): ";						  
 						  echo '<tr> 		 
                                  <td>'.$dta.'</td>
 						        </tr>';
@@ -830,7 +955,7 @@ $logado = $_SESSION['nome_usuario'];
                                 </tr>';
 
 						 echo '</fieldset>';
-						 echo "<br>";
+						 echo "<br><br>";
 						 echo '</ul>';	 
 
 							  
@@ -858,9 +983,79 @@ $logado = $_SESSION['nome_usuario'];
 
 						
 						echo '<fieldset>';
+						
+		echo '<div id="listView" class="list">';
+			echo '<li class="dropdown list-item-active">';
+				echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown"><b><font color="#000000"><center>Alterar Dados da Área</center></font></b> <span class="caret"></span></a>';
+				echo '<ul id="login-dp" class="dropdown-menu">';
+					echo '<li id="login_li" class="form-login">';
+						echo '<div class="row">';
+							echo '<div class="col-md-12 input-style">';
+								echo '<form class="form form-login" role="form" method="post" action="alterar_dados_da area.php" accept-charset="UTF-8" id="login-nav">';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Largura</label>';
+										echo '<input type="name" class="form-control" id="largura" name="largura" placeholder="Largura" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Comprimento</label>';
+										echo '<input type="name" class="form-control" id="comprimento" name="comprimento" placeholder="Comprimento" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >DN da Linha Principal</label>';
+										echo '<input type="name" class="form-control" id="dnlp" name="dnlp" placeholder="DN da Linha Principal" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >DN da Linha Lateral</label>';
+										echo '<input type="name" class="form-control" id="dnll" name="dnll" placeholder="DN da Linha Lateral" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Comprimento da Linha de Recalque</label>';
+										echo '<input type="name" class="form-control" id="clr" name="clr" placeholder="Comprimento da Linha de Recalque" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Comprimento da Linha de Sucção</label>';
+										echo '<input type="name" class="form-control" id="cls" name="cls" placeholder="Comprimento da Linha de Sucção" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >DN da Linha de Recalque</label>';
+										echo '<input type="name" class="form-control" id="dnlr" name="dnlr" placeholder="DN da Linha de Recalque" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >DN da Linha de Sucção</label>';
+										echo '<input type="name" class="form-control" id="dnls" name="dnls" placeholder="DN da Linha de Sucção" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Tempo de Funcionamento</label>';
+										echo '<input type="name" class="form-control" id="tf" name="tf" placeholder="Tempo de Funcionamento" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Número Total de Setores</label>';
+										echo '<input type="name" class="form-control" id="nts" name="nts" placeholder="Número Total de Setores" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<button type="submit" class="btn btn-primary btn-block" id="status">Alterar</button>';
+									echo '</div>';
+								echo '</form>';
+							echo '</div>';
+						echo '</div>';
+					echo '</li>';
+				echo '</ul>';
+			echo '</li>';
+        echo '</div>';
 
 						   echo "<h4>";
-						  echo "&nbsp&nbsp  Largura: ";
+						  echo "&nbsp&nbsp Largura: ";
 						  echo '<tr>       
                                  <td>'.$area_largura.'</td>
 								 </tr>';
@@ -918,7 +1113,7 @@ $logado = $_SESSION['nome_usuario'];
                           echo '<tr>								
 								 <td>'.$area_nts.'</td>
                               </tr>';
-						  echo "<br>";	
+						  echo "<br><br><br><br><br>";	
                         
 						 echo '</fieldset>';
 						 
@@ -948,6 +1143,71 @@ $logado = $_SESSION['nome_usuario'];
 
 						
 						echo '<fieldset>';
+						
+		echo '<div id="listView" class="list">';
+			echo '<li class="dropdown list-item-active">';
+				echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown"><b><font color="#000000"><center>Alterar Dados da Cultura</center></font></b> <span class="caret"></span></a>';
+				echo '<ul id="login-dp" class="dropdown-menu">';
+					echo '<li id="login_li" class="form-login">';
+						echo '<div class="row">';
+							echo '<div class="col-md-12 input-style">';
+								echo '<form class="form form-login" role="form" method="post" action="alterar_dados_da_cultura.php" accept-charset="UTF-8" id="login-nav">';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Nome da Cultura</label>';
+										echo '<input type="name" class="form-control" id="nc" name="nc" placeholder="Nome da Cultura" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Data de Plantio</label>';
+										echo '<input type="date" class="form-control" id="dp" name="dp" placeholder="Data de Plantio" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Espaçamento entre Plantas</label>';
+										echo '<input type="name" class="form-control" id="eep" name="eep" placeholder="Espaçamento entre Plantas" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Espaçamento entre Fileiras</label>';
+										echo '<input type="name" class="form-control" id="eef" name="eef" placeholder="Espaçamento entre Fileiras" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Área Sombreda</label>';
+										echo '<input type="name" class="form-control" id="as" name="as" placeholder="Área Sombreda" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Profundidade Efetiva do Sistema Radicular (Z)</label>';
+										echo '<input type="name" class="form-control" id="pesr" name="pesr" placeholder="Profundidade Efetiva do Sistema Radicular (Z)" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Fator de Disponibilidade (F)</label>';
+										echo '<input type="name" class="form-control" id="fd" name="fd" placeholder="Fator de Disponibilidade (F)" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Coeficiente de Cultivo (Kc)</label>';
+										echo '<input type="name" class="form-control" id="cc" name="cc" placeholder="Coeficiente de Cultivo (Kc)" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Evapotranspiração da Cultura (ETc)</label>';
+										echo '<input type="name" class="form-control" id="etc" name="etc" placeholder="Evapotranspiração da Cultura (ETc)" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<button type="submit" class="btn btn-primary btn-block" id="status">Alterar</button>';
+									echo '</div>';
+								echo '</form>';
+							echo '</div>';
+						echo '</div>';
+					echo '</li>';
+				echo '</ul>';
+			echo '</li>';
+        echo '</div>';
  
                            echo "<h4>";
 						  echo "&nbsp&nbsp Nome da Cultura: ";
@@ -1002,7 +1262,7 @@ $logado = $_SESSION['nome_usuario'];
                           echo '<tr>								
 								 <td>'.$cult_etc.'</td>
                               </tr>';
-						  echo "<br>";					      
+						  echo "<br><br><br><br>";					      
 
 						 echo '</fieldset>';
 						 
@@ -1010,6 +1270,11 @@ $logado = $_SESSION['nome_usuario'];
                             
                           								  
 						/* dados do solo */	  
+						
+			if($solo_cc == "" && $solo_pm == "" && $solo_ds == "" && $solo_irn == "" && $solo_itn == "" && $solo_cra == "" && $solo_cta == "" && $solo_vib == ""){
+               echo "";
+      		}
+             else{			   
 							  
 						   echo '<div class="menu_8">';
 					     echo '<div class="menu_8-box">';
@@ -1033,6 +1298,66 @@ $logado = $_SESSION['nome_usuario'];
 
 						
 						echo '<fieldset>';
+						
+						echo '<div id="listView" class="list">';
+			echo '<li class="dropdown list-item-active">';
+				echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown"><b><font color="#000000"><center>Alterar Dados do Solo</center></font></b> <span class="caret"></span></a>';
+				echo '<ul id="login-dp" class="dropdown-menu">';
+					echo '<li id="login_li" class="form-login">';
+						echo '<div class="row">';
+							echo '<div class="col-md-12 input-style">';
+								echo '<form class="form form-login" role="form" method="post" action="alterar_dados_do_solo.php" accept-charset="UTF-8" id="login-nav">';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Capacidade de Campo (CC)</label>';
+										echo '<input type="name" class="form-control" id="ccampo" name="ccampo" placeholder="Capacidade de Campo (CC)" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Ponto de Murchamento (PM)</label>';
+										echo '<input type="name" class="form-control" id="pm" name="pm" placeholder="Ponto de Murchamento (PM)" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Densidade do Solo (ds)</label>';
+										echo '<input type="name" class="form-control" id="ds" name="ds" placeholder="Densidade do Solo (ds)" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Irrigacao Real Necessária (IRN)</label>';
+										echo '<input type="name" class="form-control" id="irn" name="irn" placeholder="Irrigacao Real Necessária (IRN)" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Irrigacao Total Necessária</label>';
+										echo '<input type="name" class="form-control" id="itn" name="itn" placeholder="Irrigacao Total Necessária" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Capacidade Real de Água no Solo (CRA)</label>';
+										echo '<input type="name" class="form-control" id="cra" name="cra" placeholder="Capacidade Real de Água no Solo (CRA)" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Capacidade Total de Água no Solo (CTA)</label>';
+										echo '<input type="name" class="form-control" id="cta" name="cta" placeholder="Capacidade Total de Água no Solo (CTA)" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<label class="sr-only" >Velocidade de Infiltração Básica (Vib)</label>';
+										echo '<input type="name" class="form-control" id="vib" name="vib" placeholder="Velocidade de Infiltração Básica (Vib)" >';
+									echo '</div>';
+									
+									echo '<div class="form-group">';
+										echo '<button type="submit" class="btn btn-primary btn-block" id="status">Alterar</button>';
+									echo '</div>';
+								echo '</form>';
+							echo '</div>';
+						echo '</div>';
+					echo '</li>';
+				echo '</ul>';
+			echo '</li>';
+        echo '</div>';
  
                             echo "<h4>";
 						  echo "&nbsp&nbsp Capacidade de Campo (CC): ";
@@ -1047,7 +1372,7 @@ $logado = $_SESSION['nome_usuario'];
 						        </tr>';
 						  echo "<br><br>";
 
-                          echo "&nbsp Densidade-do-Solo (ds): ";								
+                          echo "&nbsp Densidade do Solo (ds): ";								
                           echo '<tr>								
 								 <td>'.$solo_ds.'</td>
                               </tr>';
@@ -1081,13 +1406,13 @@ $logado = $_SESSION['nome_usuario'];
                           echo '<tr>								
 								 <td>'.$solo_vib.'</td>
                               </tr>';
-						  echo "<br>";
+						  echo "<br><br><br><br>";
 						
 						 echo '</fieldset>';
 						 
 						 echo '</ul>';		  
                             
-						  						  
+					}	  						  
 						  
 						  
 						if($as_nome_a == "" && $as_Irrigacao_Real_Necessaria_li_a == "" && $as_Turno_de_Rega_Adotado_ajustada_a == "" && $as_vazao_as_a == "" && $as_vazaoll_a == "" && $as_vazaolp_a == "" && $as_Vazao_da_Linha_de_Recalque_a == "" && $as_Vazao_da_Linha_de_Succao_a == "" && $as_Perda_de_Carga_Localizada_cmb_a == ""){

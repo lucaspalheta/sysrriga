@@ -38,7 +38,7 @@ session_start();
 		$_SESSION['vporll_g'] = $vporll;
 
 	   
-        echo"<script language='javascript' type='text/javascript'>alert('Dados Salvos Temporariamente !');window.location.href='http://localhost:8080/LabWebII/Sysrriga/calculos/Gotejamento/ResultadosGotejador/resultados_gotejador.php';</script>";
+        echo"<script language='javascript' type='text/javascript'>alert('Dados Salvos Temporariamente !');window.location.href='calculos/Gotejamento/ResultadosGotejador/resultados_gotejador.php';</script>";
 
 	 }		
      else{ 

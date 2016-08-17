@@ -19,7 +19,7 @@
 	   
      if($qll == "" && $nsld  == "" && $c  == "" && $dnlp  == "" && $mPs == "" && $cgld == "" && $dnld == ""){
 	 
-	 	  echo"<script language='javascript' type='text/javascript'>alert('Preencha os campos corretamente !');window.location.href='http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/LinhaDerivacao/linha_derivacao.php';</script>";
+	 	  echo"<script language='javascript' type='text/javascript'>alert('Preencha os campos corretamente !');window.location.href='..//../../../calculos/Microaspersao/LinhaDerivacao/linha_derivacao.php';</script>";
       }
 	  
 	 else{ 
@@ -125,7 +125,7 @@
 		 $_SESSION['pressao_inicio_linha_derivacao'] = $pild;
 
 		
-		echo"<script language='javascript' type='text/javascript'>alert('Dados Salvos Temporariamente !');window.location.href='http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/Resultados/resultados.php';</script>";
+		echo"<script language='javascript' type='text/javascript'>alert('Dados Salvos Temporariamente !');window.location.href='..//../../../calculos/Microaspersao/Resultados/resultados.php';</script>";
 
     }		
 	

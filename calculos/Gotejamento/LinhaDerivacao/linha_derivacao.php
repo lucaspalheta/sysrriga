@@ -136,7 +136,7 @@ $logado = $_SESSION['nome_usuario'];
 
 					   <ul class="nav navbar-nav navbar-right">
 						  <li class="dropdown">
-							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="http://localhost:8080/LabWebII/Sysrriga/images/logado3.png" alt=""/> <?php echo "<font color='#FFF'> $logado </font>"; ?> </a>
+							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="..//../../../images/logado3.png" alt=""/> <?php echo "<font color='#FFF'> $logado </font>"; ?> </a>
 							  <ul class="dropdown-menu">
 								<li><a href="..//../../../index.php">Sair</a></li>
 							  </ul>

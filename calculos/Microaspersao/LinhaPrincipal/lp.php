@@ -17,7 +17,7 @@
 	   
      if($qld == "" && $nld == "" && $ca == "" && $dna == "" && $vmlp == "" && $crlp == "" && $clp == ""){
 	 
-	 	  echo"<script language='javascript' type='text/javascript'>alert('Preencha os campos corretamente !');window.location.href='http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/LinhaPrincipal/linha_principal.php';</script>";
+	 	  echo"<script language='javascript' type='text/javascript'>alert('Preencha os campos corretamente !');window.location.href='..//../../../calculos/Microaspersao/LinhaPrincipal/linha_principal.php';</script>";
       }
 	  
 	 else{ 
@@ -83,7 +83,7 @@
 		 $_SESSION['perda_carga_linha_principal'] = $pclp;
 
 		
-		echo"<script language='javascript' type='text/javascript'>alert('Dados Salvos Temporariamente !');window.location.href='http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/Resultados/resultados.php';</script>";
+		echo"<script language='javascript' type='text/javascript'>alert('Dados Salvos Temporariamente !');window.location.href='..//../../../calculos/Microaspersao/Resultados/resultados.php';</script>";
 
     }		
 	
