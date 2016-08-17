@@ -1,0 +1,347 @@
+<?php
+      session_start();
+  
+  
+if((!isset ($_SESSION['nome_usuario']) == true) and (!isset ($_SESSION['senha_usuario']) == true))
+{
+	unset($_SESSION['nome_usuario']);
+	unset($_SESSION['senha_usuario']);
+	header('location:http://localhost:8080/LabWebII/Sysrriga/index%20.php#');
+	}
+
+$logado = $_SESSION['nome_usuario'];
+?>
+
+<html lang="pt-br">
+<head>
+	<title>Sysrriga - Beta</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="http://localhost:8080/LabWebII/Sysrriga/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="http://localhost:8080/LabWebII/Sysrriga/css/font-awesome.css">
+	<link rel='stylesheet' id='camera-css'  href='http://localhost:8080/LabWebII/Sysrriga/css/camera.css' type='text/css' media='all'>
+
+	<link rel="stylesheet" type="text/css" href="http://localhost:8080/LabWebII/Sysrriga/css/slicknav.css">
+	<link rel="stylesheet" href="http://localhost:8080/LabWebII/Sysrriga/css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="http://localhost:8080/LabWebII/Sysrriga/css/style.css">
+	<link rel="stylesheet" href="http://localhost:8080/LabWebII/Sysrriga/css/style.css">
+	<link href="http://localhost:8080/LabWebII/Sysrriga/css/style1.css" type="text/css" rel="stylesheet" media="all">
+
+
+	<script type="text/javascript" src="http://localhost:8080/LabWebII/Sysrriga/js/jquery-1.8.3.min.js"></script>
+
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700|Open+Sans:700' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="http://localhost:8080/LabWebII/Sysrriga/js/jquery.mobile.customized.min.js"></script>
+	<script type="text/javascript" src="http://localhost:8080/LabWebII/Sysrriga/js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="http://localhost:8080/LabWebII/Sysrriga/js/camera.min.js"></script>
+	<script type="text/javascript" src="http://localhost:8080/LabWebII/Sysrriga/js/myscript.js"></script>
+	<script src="http://localhost:8080/LabWebII/Sysrriga/js/sorting.js" type="text/javascript"></script>
+	<script src="http://localhost:8080/LabWebII/Sysrriga/js/jquery.isotope.js" type="text/javascript"></script>
+	<!--script type="text/javascript" src="js/jquery.nav.js"></script-->
+
+
+	<script>
+		jQuery(function(){
+			jQuery('#camera_wrap_1').camera({
+				transPeriod: 500,
+				time: 3000,
+				height: '490px',
+				thumbnails: false,
+				pagination: true,
+				playPause: false,
+				loader: false,
+				navigation: false,
+				hover: false
+			});
+		});
+	</script>
+
+
+
+
+
+	<script>
+		$(document).ready(function(){
+			$("#login_entrar").click(function(evento){
+				if ($("#login_div").attr("checked")){
+					$("#login_div").css("display", "block");
+				}else{
+				}
+			});
+		});
+	</script>
+
+
+</head>
+<body>
+
+<div id="wrapper">
+	<div id="leftWrapper">
+		<a href="#" class="container">
+			<img src="http://localhost:8080/LabWebII/Sysrriga/images/logo.png">
+		</a>
+		<div id="listView" class="list">	
+                <li>
+			         <a href="http://localhost:8080/LabWebII/Sysrriga/index2.php">Projetos</a>
+                </li>
+			
+			    <li class="dropdown list-item-active">
+				    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Micro-Aspersão</b> <span class="caret"></span></a>
+			    <li>
+                    <a href="http://localhost:8080/LabWebII/Sysrriga/microaspersao.php">Dados do Microaspersor</a>
+                </li>
+                <li>
+                    <a href="http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/LaminaIrrigacao/lamina_irrigacao.php">Lâmina de Irrigação</a>
+                </li>
+                <li>
+                    <a href="http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/LaminaIrrigacaoAjustada/lamina_irrigacao_ajustada.php">Lâmina de Irrigação Ajustada</a>
+                </li>
+                <li>
+                    <a href="http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/LinhaLateral/linha_lateral.php">Linha Lateral</a>
+                </li>
+                <li>
+                    <a href="http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/LinhaDerivacao/linha_derivacao.php">Linha de Derivação</a>
+                </li>
+                <li>
+                    <a href="http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/LinhaPrincipal/linha_principal.php">Linha Principal</a>
+                </li>
+                <li>
+                    <a href="http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/LinhaRecalque/linha_recalque.php">Linha de Recalque</a>
+                </li>
+		        <li>
+                    <a href="http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/LinhaSuccao/linha_succao.php">Linha de Sucção</a>
+                </li>
+				<li>
+                    <a href="http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/ConjuntoMotobomba/motobomba.php">Conjunto Motobomba</a>
+                </li>
+				<li>
+                    <a href="http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/Resultados/resultados.php">Resultados</a>
+                </li>
+            </li>
+
+		</div>
+	</div>
+
+	<div id="rightWrapper">
+		<div id="header">
+			<a id="fullPage" href="#">|||</a>
+			<a href="#">
+				<img src="http://localhost:8080/LabWebII/Sysrriga/images/logo.png">
+			</a>
+			<form class="navbar-form  navbar-right container div-pesquisa" role="Pesquisar" style="margin-right: 250px" >
+
+					   <ul class="nav navbar-nav navbar-right">
+						  <li class="dropdown">
+							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="http://localhost:8080/LabWebII/Sysrriga/images/logado3.png" alt=""/> <?php echo "<font color='#FFF'> $logado </font>"; ?> </a>
+							  <ul class="dropdown-menu">
+								<li><a href="http://localhost:8080/LabWebII/Sysrriga/index%20.php#">Sair</a></li>
+							  </ul>
+						  </li>
+					  </ul>
+			</form>
+
+					   
+
+		</div>
+
+
+		<div id="contentWrapper">
+
+
+			<div id="news">
+                        <h1><center>Conjunto Motobomba</center></h1>
+						
+				<br><br>
+						
+           <form class="container form-horizontal  form-border "  id="formulario_total" role="form" method="post" action="cm.php" >
+		
+			<fieldset> 			
+								
+				<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
+						<label class="control-label color_black">Diferença de Nível na Linha de Recalque</label><input type="text" class="form-control " name='Diferenca_de_Nivel_na_Linha_de_Recalque' id="Diferenca_de_Nivel_na_Linha_de_Recalque" placeholder='Diferença de Nível na Linha de Recalque'/>
+				</div>
+				
+                <div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
+						<label class="control-label color_black">Diferença de Nível na Linha de Sucção</label><input type="text" class="form-control " name='Diferenca_de_Nivel_na_Linha_de_Succao' id="Diferenca_de_Nivel_na_Linha_de_Succao" placeholder='Diferença de Nível na Linha de Sucção'/>
+				</div>
+
+				<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
+						<label class="control-label color_black">Perda de Carga no Cabeçal de Controle</label><input type="text" class="form-control " name='Perda_de_Carga_no_Cabecal_de_Controle' id="Perda_de_Carga_no_Cabecal_de_Controle" placeholder='Perda de Carga no Cabeçal de Controle'/>
+				</div>
+				
+				<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
+						<label class="control-label color_black">Perda de Carga Localizada</label><input type="text" class="form-control " name='Perda_de_Carga_Localizada' id="Perda_de_Carga_Localizada" placeholder='Perda de Carga Localizada'/>
+				</div>
+
+				<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
+						<label class="control-label color_black">Vazão da Linha Principal</label><input type="text" class="form-control " name='qlp' id="qlp" placeholder='Vazão da Linha Principal'/>
+				</div>	
+	
+				<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
+						<label class="control-label color_black">Eficiência da Bomba</label><input type="text" class="form-control " name='Eficiencia_da_Bomba' id="Eficiencia_da_Bomba" placeholder='Eficiência da Bomba'/>
+				</div>	
+				
+				<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
+						<label class="control-label color_black">Eficiência do Motor</label><input type="text" class="form-control " name='Eficiencia_do_Motor' id="Eficiencia_do_Motor" placeholder='Eficiência do Motor'/>
+				</div>
+				
+				<div class="form-group col-md-3 col-sm-12 col-xs-12 evapotranspiracao">
+						<label class="control-label color_black">Consumo Médio (cv)</label><input type="text" class="form-control " name='Consumo_Medio_cv' id="Consumo_Medio_cv" placeholder='Consumo Médio (cv)'/>
+				</div>
+				
+            </fieldset>
+			
+			<br><br>
+				<div class="form-group">
+						<button type="submit" id="cadastro_btn" class="btn btn-primary btn-block">Submeter</button>
+					  </div>
+		</form>
+		
+		
+                   </div>        <!-- /#page-content-wrapper -->
+
+    </div>
+
+
+			<script src="http://localhost:8080/LabWebII/Sysrriga/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+			<script src="http://localhost:8080/LabWebII/Sysrriga/js/bootstrap.min.js"></script>
+			<script src="http://localhost:8080/LabWebII/Sysrriga/js/jquery.slicknav.js"></script>
+			<script>
+				$(document).ready(function(){
+					$(".bhide").click(function(){
+						$(".hideObj").slideDown();
+						$(this).hide(); //.attr()
+						return false;
+					});
+					$(".bhide2").click(function(){
+						$(".container.hideObj2").slideDown();
+						$(this).hide(); // .attr()
+						return false;
+					});
+
+					$('.heart').mouseover(function(){
+						$(this).find('i').removeClass('fa-heart-o').addClass('fa-heart');
+					}).mouseout(function(){
+						$(this).find('i').removeClass('fa-heart').addClass('fa-heart-o');
+					});
+
+					function sdf_FTS(_number,_decimal,_separator)
+					{
+						var decimal=(typeof(_decimal)!='undefined')?_decimal:2;
+						var separator=(typeof(_separator)!='undefined')?_separator:'';
+						var r=parseFloat(_number);
+						var exp10=Math.pow(10,decimal);
+						r=Math.round(r*exp10)/exp10;
+						rr=Number(r).toFixed(decimal).toString().split('.');
+						b=rr[0].replace(/(\d{1,3}(?=(\d{3})+(?:\.\d|\b)))/g,"\$1"+separator);
+						r=(rr[1]?b+'.'+rr[1]:b);
+
+						return r;
+					}
+
+					setTimeout(function(){
+						$('#counter').text('0');
+						$('#counter1').text('0');
+						$('#counter2').text('0');
+						setInterval(function(){
+
+							var curval=parseInt($('#counter').text());
+							var curval1=parseInt($('#counter1').text().replace(' ',''));
+							var curval2=parseInt($('#counter2').text());
+							if(curval<=707){
+								$('#counter').text(curval+1);
+							}
+							if(curval1<=12280){
+								$('#counter1').text(sdf_FTS((curval1+20),0,' '));
+							}
+							if(curval2<=245){
+								$('#counter2').text(curval2+1);
+							}
+						}, 2);
+
+					}, 500);
+				});
+			</script>
+			<script type="text/javascript">
+				jQuery(document).ready(function(){
+					jQuery('#menu').slicknav();
+
+				});
+			</script>
+
+			<script type="text/javascript">
+				$(document).ready(function(){
+
+					var $menu = $("#menuF");
+
+					$(window).scroll(function(){
+						if ( $(this).scrollTop() > 100 && $menu.hasClass("default") ){
+							$menu.fadeOut('fast',function(){
+								$(this).removeClass("default")
+									.addClass("fixed transbg")
+									.fadeIn('fast');
+							});
+						} else if($(this).scrollTop() <= 100 && $menu.hasClass("fixed")) {
+							$menu.fadeOut('fast',function(){
+								$(this).removeClass("fixed transbg")
+									.addClass("default")
+									.fadeIn('fast');
+							});
+						}
+					});
+				});
+				//jQuery
+			</script>
+			<script>
+				/*menu*/
+				function calculateScroll() {
+					var contentTop      =   [];
+					var contentBottom   =   [];
+					var winTop      =   $(window).scrollTop();
+					var rangeTop    =   200;
+					var rangeBottom =   500;
+					$('.navmenu').find('a').each(function(){
+						contentTop.push( $( $(this).attr('href') ).offset().top );
+						contentBottom.push( $( $(this).attr('href') ).offset().top + $( $(this).attr('href') ).height() );
+					});
+					$.each( contentTop, function(i){
+						if ( winTop > contentTop[i] - rangeTop && winTop < contentBottom[i] - rangeBottom ){
+							$('.navmenu li')
+								.removeClass('active')
+								.eq(i).addClass('active');
+						}
+					})
+				}
+				$(document).ready(function(){
+					calculateScroll();
+					$(window).scroll(function(event) {
+						calculateScroll();
+					});
+					$('.navmenu ul li a').click(function() {
+						$('html, body').animate({scrollTop: $(this.hash).offset().top - 80}, 800);
+						return false;
+					});
+				});
+			</script>
+			<script type="text/javascript" charset="utf-8">
+
+				jQuery(document).ready(function(){
+					jQuery(".pretty a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'normal',theme:'light_square',slideshow:3000, autoplay_slideshow: true, social_tools: ''});
+
+				});
+			</script>
+
+
+		</div>
+	</div>
+</div>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+<script src="http://localhost:8080/LabWebII/Sysrriga/js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,403 @@
+<?php
+      session_start();
+  
+  include "valida_cookies.inc";
+  
+if((!isset ($_SESSION['nome_usuario']) == true) and (!isset ($_SESSION['senha_usuario']) == true))
+{
+	unset($_SESSION['nome_usuario']);
+	unset($_SESSION['senha_usuario']);
+	header('location:index.php');
+	}
+
+$logado = $_SESSION['nome_usuario'];
+?>
+
+<html lang="pt-br">
+<head>
+	<title>Sysrriga - Beta</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+	<link rel='stylesheet' id='camera-css'  href='css/camera.css' type='text/css' media='all'>
+
+	<link rel="stylesheet" type="text/css" href="css/slicknav.css">
+	<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="css/style1.css" type="text/css" rel="stylesheet" media="all">
+
+
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700|Open+Sans:700' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="js/jquery.mobile.customized.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="js/camera.min.js"></script>
+	<script type="text/javascript" src="js/myscript.js"></script>
+	<script src="js/sorting.js" type="text/javascript"></script>
+	<script src="js/jquery.isotope.js" type="text/javascript"></script>
+	<!--script type="text/javascript" src="js/jquery.nav.js"></script-->
+
+
+	<script>
+		jQuery(function(){
+			jQuery('#camera_wrap_1').camera({
+				transPeriod: 500,
+				time: 3000,
+				height: '490px',
+				thumbnails: false,
+				pagination: true,
+				playPause: false,
+				loader: false,
+				navigation: false,
+				hover: false
+			});
+		});
+	</script>
+
+
+
+
+
+	<script>
+		$(document).ready(function(){
+			$("#login_entrar").click(function(evento){
+				if ($("#login_div").attr("checked")){
+					$("#login_div").css("display", "block");
+				}else{
+				}
+			});
+		});
+	</script>
+
+	<!--script de login-->
+
+</head>
+<body>
+
+<div id="wrapper">
+	<div id="leftWrapper">
+		<a href="#" class="container">
+			<img src="images/logo.png">
+		</a>
+		<div id="listView" class="list">
+			<li><a href="logado.php">Home</a></li>
+
+
+
+		</div>
+	</div>
+
+	<div id="rightWrapper" class="full-page">
+	
+		<div id="header" class="full-page log-img">
+	
+			
+         <a id="fullPage" href="#">|||</a>
+			<a href="#">
+				<img src="images/logo.png">
+			</a>
+			<a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-smile"> <img src="http://localhost:8080/LabWebII/Sysrriga/images/logado3.png" alt=""/></a>
+			<form class="navbar-form  navbar-right container div-pesquisa" role="Pesquisar" style="margin-right: 250px" >
+
+					   <ul class="nav navbar-nav navbar-right">
+						  <li class="dropdown">
+							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="http://localhost:8080/LabWebII/Sysrriga/images/logado3.png" alt=""/> <?php echo "<font color='#FFF'> $logado </font>"; ?> </a>
+							  <ul class="dropdown-menu">
+								<li><a href="index.php">Sair</a></li>
+							  </ul>
+						  </li>
+					  </ul>
+			</form>
+		</div>
+
+
+		
+		<div id="contentWrapper">
+
+			<div id="news">
+			<div class="container btn-lg padding-top-30"></div>
+		<div id="formulario"  class="container">
+
+				
+				
+				
+					<div class="fltr2">
+						<center>
+			<form class="container" >
+						
+						
+						
+							<ul id="info-gotejamento" class="col-lg-12 ">
+								<?php
+	 
+	  include "IFPA_sysrriga_20160010019982000.inc";
+	 
+	 $nome2 = $_SESSION['nome_usuario'];
+	 $senha2 = $_SESSION['senha_usuario'];
+	 
+	 $resultado = mysql_query("SELECT * FROM usuarios where email = '$nome2' and senha='$senha2' ");
+     $linhas_pesquisa = mysql_num_rows($resultado);
+ 
+       if($linhas_pesquisa == 0){
+         echo"<script language='javascript' type='text/javascript'>alert('Nenhum dado foi encontrado !');window.location.href='http://localhost:8080/LabWebII/Sysrriga/calculos/Microaspersao/Resultados/resultados.php';</script>";
+       }
+  
+        if($linhas_pesquisa != 0){
+       for($i = 0; $i < $linhas_pesquisa; $i++){
+       $registro = mysql_fetch_row($resultado);
+         
+       $idUsuario = $registro[0];
+
+	   
+      } 
+  } 
+
+
+	  $sql = "select * from dados_projeto Where id_usuario = $idUsuario";
+	 $qr = mysql_query($sql) or die (mysql_error());
+	 
+  GeraColunas(2, $sql);
+ 	
+ 	echo"</td>";
+ 	echo"</tr>";
+  	echo"</table>";
+ 	
+ 	
+ 	function GeraColunas($pNumColunas, $pQuery) {
+ 	$imprimir = mysql_query($pQuery);
+	
+	echo "<center><h1><font color='333'> Meus Projetos </font></h1></center><hr>";
+	
+ 	echo ('<table class="col-lg-12">');
+	
+	  echo '<table width="100%" class="col-lg-12  col-sm-12 col-md-12 ">';
+ 	  echo "<tr>";
+ 	  echo "<td>";
+ 	  echo '<table width="100%" class="col-lg-12 col-sm-12 col-md-12 ">';
+	  echo "<tr>";
+ 	  echo "<td>";
+	  echo '<li class="info-01 col-lg-12">';
+	  echo "<center><a href='index2.php'>Novo</a></center>";
+	  echo '</li></div><br></td>';
+ 	  echo "</tr>";
+ 	  echo "</table>";
+ 	  echo "</td>";
+ 	  echo "</tr>";
+ 	  echo "</table>";
+	  
+ 	 for($i = 0; $i <= mysql_num_rows($imprimir); ++$i) {
+ 	 
+ 	 for ($intCont = 0; $intCont < $pNumColunas; $intCont++) {
+ 	  $linha = mysql_fetch_array($imprimir);
+ 	  if ($i > $linha) {
+ 	   if ( $intCont < $pNumColunas-1) echo "</tr>\n";
+ 	   break;
+          }
+ 	 
+      $id_projeto = $linha[1];
+	  $nome_projeto = $linha[2];
+ 	  
+  
+   if ( $intCont == 0 )
+      echo "<tr>\n";
+ 	  echo "<td>";
+ 	  // Aqui você inclui o conteudo
+ 	  echo '<table width="100%" class="col-lg-12 col-sm-12 col-md-12 ">';
+ 	  echo "<tr>";
+ 	  echo "<td>";
+ 	  echo '<table width="100%" class="col-lg-12 col-sm-12 col-md-12 ">';
+	  echo "<tr>";
+ 	  echo "<td>";
+	  echo '<li class="info-01 col-lg-12">';
+	  echo "<center><a href='lista_dados_projeto.php?id=".$id_projeto."&acao=add''>$nome_projeto</a></center>";
+	  echo '</li></div><br></td>';
+ 	  echo "</tr>";
+ 	  echo "</table>";
+ 	  echo "</td>";
+ 	  echo "</tr>";
+ 	  echo "</table>";
+	 
+ 	 
+ 	   // Aqui é o final do conteudo
+ 	  echo "</td>";
+ 	 
+ 	  if ( $intCont == $pNumColunas-1 ) {
+ 	   echo "</tr>\n";
+ 	  } else { $i++; }
+	  
+ 	 }
+ 	 
+ 	 }
+	 
+
+ 	echo ('</table>');
+ 	}
+ 	 
+	
+	 mysql_close($conexao);
+	 
+	
+	?>
+							</ul>
+							
+							
+							
+			</form>
+						</center>
+					</div>
+
+			
+			
+			
+			</div>
+<!--div de corpo da página-->
+		
+
+
+<!---------------->
+
+			<script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+			<script src="js/bootstrap.min.js"></script>
+			<script src="js/jquery.slicknav.js"></script>
+			<script>
+				$(document).ready(function(){
+					$(".bhide").click(function(){
+						$(".hideObj").slideDown();
+						$(this).hide(); //.attr()
+						return false;
+					});
+					$(".bhide2").click(function(){
+						$(".container.hideObj2").slideDown();
+						$(this).hide(); // .attr()
+						return false;
+					});
+
+					$('.heart').mouseover(function(){
+						$(this).find('i').removeClass('fa-heart-o').addClass('fa-heart');
+					}).mouseout(function(){
+						$(this).find('i').removeClass('fa-heart').addClass('fa-heart-o');
+					});
+
+					function sdf_FTS(_number,_decimal,_separator)
+					{
+						var decimal=(typeof(_decimal)!='undefined')?_decimal:2;
+						var separator=(typeof(_separator)!='undefined')?_separator:'';
+						var r=parseFloat(_number);
+						var exp10=Math.pow(10,decimal);
+						r=Math.round(r*exp10)/exp10;
+						rr=Number(r).toFixed(decimal).toString().split('.');
+						b=rr[0].replace(/(\d{1,3}(?=(\d{3})+(?:\.\d|\b)))/g,"\$1"+separator);
+						r=(rr[1]?b+'.'+rr[1]:b);
+
+						return r;
+					}
+
+					setTimeout(function(){
+						$('#counter').text('0');
+						$('#counter1').text('0');
+						$('#counter2').text('0');
+						setInterval(function(){
+
+							var curval=parseInt($('#counter').text());
+							var curval1=parseInt($('#counter1').text().replace(' ',''));
+							var curval2=parseInt($('#counter2').text());
+							if(curval<=707){
+								$('#counter').text(curval+1);
+							}
+							if(curval1<=12280){
+								$('#counter1').text(sdf_FTS((curval1+20),0,' '));
+							}
+							if(curval2<=245){
+								$('#counter2').text(curval2+1);
+							}
+						}, 2);
+
+					}, 500);
+				});
+			</script>
+			<script type="text/javascript">
+				jQuery(document).ready(function(){
+					jQuery('#menu').slicknav();
+
+				});
+			</script>
+
+			<script type="text/javascript">
+				$(document).ready(function(){
+
+					var $menu = $("#menuF");
+
+					$(window).scroll(function(){
+						if ( $(this).scrollTop() > 100 && $menu.hasClass("default") ){
+							$menu.fadeOut('fast',function(){
+								$(this).removeClass("default")
+									.addClass("fixed transbg")
+									.fadeIn('fast');
+							});
+						} else if($(this).scrollTop() <= 100 && $menu.hasClass("fixed")) {
+							$menu.fadeOut('fast',function(){
+								$(this).removeClass("fixed transbg")
+									.addClass("default")
+									.fadeIn('fast');
+							});
+						}
+					});
+				});
+				//jQuery
+			</script>
+			<script>
+				/*menu*/
+				function calculateScroll() {
+					var contentTop      =   [];
+					var contentBottom   =   [];
+					var winTop      =   $(window).scrollTop();
+					var rangeTop    =   200;
+					var rangeBottom =   500;
+					$('.navmenu').find('a').each(function(){
+						contentTop.push( $( $(this).attr('href') ).offset().top );
+						contentBottom.push( $( $(this).attr('href') ).offset().top + $( $(this).attr('href') ).height() );
+					});
+					$.each( contentTop, function(i){
+						if ( winTop > contentTop[i] - rangeTop && winTop < contentBottom[i] - rangeBottom ){
+							$('.navmenu li')
+								.removeClass('active')
+								.eq(i).addClass('active');
+						}
+					})
+				}
+				$(document).ready(function(){
+					calculateScroll();
+					$(window).scroll(function(event) {
+						calculateScroll();
+					});
+					$('.navmenu ul li a').click(function() {
+						$('html, body').animate({scrollTop: $(this.hash).offset().top - 80}, 800);
+						return false;
+					});
+				});
+			</script>
+			<script type="text/javascript" charset="utf-8">
+
+				jQuery(document).ready(function(){
+					jQuery(".pretty a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'normal',theme:'light_square',slideshow:3000, autoplay_slideshow: true, social_tools: ''});
+
+				});
+			</script>
+
+
+		</div>
+	</div>
+</div>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+<script src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
