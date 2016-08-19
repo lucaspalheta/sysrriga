@@ -2,6 +2,7 @@
       session_start();
   
   include "valida_cookies.inc";
+   include "IFPA_sysrriga_20160010019982000.inc";
   
 if((!isset ($_SESSION['nome_usuario']) == true) and (!isset ($_SESSION['senha_usuario']) == true))
 {
@@ -11,6 +12,8 @@ if((!isset ($_SESSION['nome_usuario']) == true) and (!isset ($_SESSION['senha_us
 	}
 
 $logado = $_SESSION['nome_usuario'];
+
+
 ?>
 
 <html lang="pt-br">
@@ -31,7 +34,7 @@ $logado = $_SESSION['nome_usuario'];
 
 	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700|Open+Sans:700' rel='stylesheet' type='text/css'>
+	<!<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700|Open+Sans:700' rel='stylesheet' type='text/css'>!>
 	<script type="text/javascript" src="js/jquery.mobile.customized.min.js"></script>
 	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 	<script type="text/javascript" src="js/camera.min.js"></script>
@@ -125,42 +128,55 @@ $logado = $_SESSION['nome_usuario'];
 						<center>
 			<form class="container" >
 
-
-
-							<ul  class="col-lg-12">
-								<?php
-	 
-	  include "IFPA_sysrriga_20160010019982000.inc";
-	 
-	 $pesquisa = $_POST['pesquisa'];
-     $resultado = mysql_query("select * from dados_projeto where proj_nome LIKE '%".$pesquisa."%' ");
-     $linhas = mysql_num_rows($resultado);
-
-if($linhas == 0){
-
-   echo"<script language='javascript' type='text/javascript'>alert('Nenhum projeto foi encontrado !!');window.location.href='relatorio.php';</script>";
-
-}
-
-if($linhas != 0){
-
-  echo "<center><h1>Projetos Encontrados</h1><hr></center>";
+<div class="container">
+  <h2>Projetos Encontrados</h2>
+  <?php 
   
-   for($i = 0; $i < $linhas; $i++){
-     $registro = mysql_fetch_row($resultado);
-	 
-	  $cod = $registro[1];
-      $nome = $registro[2];
-	 
-	  echo '<li class="info-01 col-lg-12">';
-	  echo "<center><a href='doc_pdf.php?id=".$cod."&acao=pes''>$nome</a></center>";
-	  echo '</li>';
-    }
-	 mysql_close($conexao);
-  }
+  $query = "SELECT * FROM dados_projeto";
+  $result = $mysqli->query($query);
+  
+  
+  ?>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Nome do Projeto</th>
+        <th>Técnico Responsável</th>
+        <th>Gerar Relatório</th>
+		
+      </tr>
+    </thead>
+    <tbody>
+	<?php
+	
+	foreach ($result as $fila) {
+	  
 	?>
-							</ul>
+	
+      <tr>
+        <td><?php echo $fila['proj_nome']?></td>
+        <td><?php echo $fila['proj_tecResponsavel']?></td>
+		<!--aqui se coloca as variáveis para serem passadas para a outra página, creio que devemos colocar uma página php apenas para receber e passar ao pdf como POST-->
+        <td><a href="gerador_relatorio.php?
+		id=<?php echo $fila['id_projeto'];
+		
+		
+		
+		
+		
+		
+		?>">Gerar Relatório</a></td>
+      </tr>
+     <?php
+	
+  }
+	 ?>
+     
+    </tbody>
+  </table>
+</div>
 
+</center>
 
 
 			</form>

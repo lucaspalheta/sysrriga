@@ -7,6 +7,7 @@ if((!isset ($_SESSION['nome_usuario']) == true) and (!isset ($_SESSION['senha_us
 {
 	unset($_SESSION['nome_usuario']);
 	unset($_SESSION['senha_usuario']);
+
 	header('location:index.php');
 	}
 
