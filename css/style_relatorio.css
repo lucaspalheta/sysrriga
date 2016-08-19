@@ -1,0 +1,58 @@
+.border-black {
+  border: 1px solid black;
+}
+
+.border-black-bottom {
+  border-bottom: 1px solid black;
+}
+
+.backgrund-laranja{
+	background-color: rgba(255,217,102,1);
+}
+
+.remove-margin{
+	margin-top:0px;
+	margin-left:-15px;
+	margin-right:-15px;
+	width:100%;
+	
+	
+}
+
+.font {
+	color:black;
+}
+
+.sublinhado  {
+	text-decoration: underline;
+}
+
+.texto-justo-10{
+	padding-top:-10px;
+	
+}
+.texto-justo-20{
+	padding-top:-20px;
+	
+}
+
+.texto-maiusculo{
+	text-transform:uppercase;
+}
+
+.direita{
+	text-align:right;
+	width:100%;
+	
+}
+.text-size-12 {
+	font-size: 12px
+}
+
+.text-size-16 {
+	text-size: 16px
+}
+
+.negrito {
+	font-weight: bold;
+}

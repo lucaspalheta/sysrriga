@@ -14,44 +14,68 @@ include "IFPA_sysrriga_20160010019982000.inc";
 <meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/style_relatorio.css">
+	
 </head>
 
 
-<body>
-<h1>Olá mundo</h1>
+<body class="border-black font">
 <?php
 $id_projeto2 = $_GET['id'];
-
-$query = "SELECT * FROM dados_projeto WHERE id_projeto = $id_projeto2";
-  $result = $mysqli->query($query);
+/*Projeto*/
+$busca_projeto = "SELECT * FROM dados_projeto WHERE id_projeto = $id_projeto2";
+  $result_projeto = $mysqli->query($busca_projeto);
+ 
+ /*Propriedade*/
+  $busca_propriedade = "SELECT * FROM dados_propriedade WHERE id_projeto = $id_projeto2";
+  $result_propriedade = $mysqli->query($busca_propriedade);
+	date_default_timezone_set('America/Sao_Paulo');
+		$day = date('d-m-d');
+		$mes = date('m');
 
 ?>
- <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Nome do Projeto</th>
-        <th>Técnico Responsável</th>
-        
-		
-      </tr>
-    </thead>
-    <tbody>
+ 
 	
 	<?php
 	
-	foreach ($result as $fila) {
-	  
+	foreach ($result_projeto as $fila_projeto) {
+	  foreach ($result_propriedade as $fila_propriedade){
 	?>
+	<!--HTML-->
+	<div class="container ">
+		<center class="text-size-12">
 	
-	<tr>
-        <td><?php echo $fila['proj_nome']?></td>
-        <td><?php echo $fila['proj_tecResponsavel']?></td>
-		<!--aqui se coloca as variáveis para serem passadas para a outra página, creio que devemos colocar uma página php apenas para receber e passar ao pdf como POST-->
-        
-      </tr>
+			<h4 class="well well-sm remove-margin backgrund-laranja border-black-bottom">Projeto de Irrigação - <?php echo $fila_projeto['proj_nome']?></h4>
+			<p class="sublinhado texto-justo-20 texto-maiusculo"> <!--Nome da Propriedade--><?php echo $fila_propriedade['prop_nome']?> </p>
+			<p class="texto-justo-10 texto-maiusculo"> <!--Nome do Proprietário--><?php echo $fila_projeto['proj_proprietario']?> </p>
+			<p class="texto-justo-10 "> <!--Cidade--><?php echo $fila_propriedade['prop_cidade']?> </p>
+			
+		</center>
+		<p class="texto-justo-10 direita text-size-12"> <!--Cidade--><?php echo $fila_propriedade['prop_cidade']; echo ", $day";?> </p>
+		<center class="text-size-12">
+	
+			
+			<p class=" negrito ">RESPONSÁVEL TÉCNICO:  <!--Nome da Propriedade--><?php echo $fila_projeto['proj_tecResponsavel']?> - CREA/PA <?php echo $fila_projeto['proj_nCrea']?></p>
+				
+		</center>
+		<p class="  ">Trata-se do projeto de irrigação da fazenda <?php echo $fila_propriedade['prop_nome']?>, localizada no <?php echo $fila_propriedade['prop_endereco']?>, município <?php echo $fila_propriedade['prop_cidade']?></p>
+	</div>
+		
+		
+     
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
      <?php
 	
-  }
+  }}
 	 ?>
 
 
