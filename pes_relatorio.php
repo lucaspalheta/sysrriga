@@ -2,6 +2,7 @@
       session_start();
   
   include "valida_cookies.inc";
+   include "IFPA_sysrriga_20160010019982000.inc";
   
 if((!isset ($_SESSION['nome_usuario']) == true) and (!isset ($_SESSION['senha_usuario']) == true))
 {
@@ -11,6 +12,8 @@ if((!isset ($_SESSION['nome_usuario']) == true) and (!isset ($_SESSION['senha_us
 	}
 
 $logado = $_SESSION['nome_usuario'];
+
+
 ?>
 
 <html lang="pt-br">
@@ -31,7 +34,7 @@ $logado = $_SESSION['nome_usuario'];
 
 	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700|Open+Sans:700' rel='stylesheet' type='text/css'>
+	<!<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700|Open+Sans:700' rel='stylesheet' type='text/css'>!>
 	<script type="text/javascript" src="js/jquery.mobile.customized.min.js"></script>
 	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 	<script type="text/javascript" src="js/camera.min.js"></script>
@@ -127,18 +130,30 @@ $logado = $_SESSION['nome_usuario'];
 
 
 
-							<ul  class="col-lg-12">
-								<?php
-	 
-	  include "IFPA_sysrriga_20160010019982000.inc";
+	<ul  class="col-lg-12">
+ 
+  <?php 
+  
+ include "IFPA_sysrriga_20160010019982000.inc";
 	 
 	 $pesquisa = $_POST['pesquisa'];
+	 
+	 
+  if($pesquisa == ""){
+    echo "<center>";
+	echo "<h1> Nenhum Projeto Foi Encontrado ! </h1><br><br>";
+	echo "<a href='relatorio.php'><h2>Voltar</h2></a>";
+	echo"</center>";
+
+  }	 
+  
+  else{	  
      $resultado = mysql_query("select * from dados_projeto where proj_nome LIKE '%".$pesquisa."%' ");
      $linhas = mysql_num_rows($resultado);
 
 if($linhas == 0){
 
-   echo"<script language='javascript' type='text/javascript'>alert('Nenhum projeto foi encontrado !!');window.location.href='relatorio.php';</script>";
+   echo"<script language='javascript' type='text/javascript'>alert('Nenhum projeto foi encontrado !!');window.location.href='pesquisa.php';</script>";
 
 }
 
@@ -152,14 +167,15 @@ if($linhas != 0){
 	  $cod = $registro[1];
       $nome = $registro[2];
 	 
-	  echo '<li class="info-01 col-lg-12">';
-	  echo "<center><a href='doc_pdf.php?id=".$cod."&acao=pes''>$nome</a></center>";
-	  echo '</li>';
+	  echo "<h3>$nome  -  <a href='gerador_relatorio.php?id=".$cod.">Gerar Relatório</a></h3>";
+	  
     }
 	 mysql_close($conexao);
   }
+  }
 	?>
-							</ul>
+
+	</ul>
 
 
 
@@ -174,8 +190,6 @@ if($linhas != 0){
 
 			</div>
 			
-			
-
     
 <!---------------->
 

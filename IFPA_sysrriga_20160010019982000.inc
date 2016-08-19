@@ -8,5 +8,7 @@
 		$conexao = mysql_connect($hostname,$username,$senha);
 		
 		mysql_select_db($banco,$conexao);
+		
+		$mysqli = new mysqli('localhost','root','usbw','sysrriga');
 			   
 ?>	

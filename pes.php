@@ -133,6 +133,17 @@ $logado = $_SESSION['nome_usuario'];
 	  include "IFPA_sysrriga_20160010019982000.inc";
 	 
 	 $pesquisa = $_POST['pesquisa'];
+	 
+	 if($pesquisa == ""){
+    echo "<center>";
+	echo "<h1> Nenhum Projeto Foi Encontrado ! </h1><br><br>";
+	echo "<a href='pesquisa.php'><h2>Voltar</h2></a>";
+	echo"</center>";
+
+  }	 
+  
+  else{	
+  
      $resultado = mysql_query("select * from dados_projeto where proj_nome LIKE '%".$pesquisa."%' ");
      $linhas = mysql_num_rows($resultado);
 
@@ -157,6 +168,7 @@ if($linhas != 0){
 	  echo '</li>';
     }
 	 mysql_close($conexao);
+  }
   }
 	?>
 							</ul>

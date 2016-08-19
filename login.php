@@ -4,6 +4,8 @@
    $senha2 = $_POST['senha'];
    
    
+   
+   
    include "IFPA_sysrriga_20160010019982000.inc";
    
     $resultado = mysql_query("SELECT * FROM usuarios WHERE email = '$nome2' ");
