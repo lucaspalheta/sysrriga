@@ -3,9 +3,8 @@
 include "IFPA_sysrriga_20160010019982000.inc";
 
 /*Aqui se faz a busca e a declaração das variáveis que vamos usar*/
-$id_projeto = $_GET['id'];
 
-$query = "SELECT * FROM dados_projeto WHERE id_projeto = 'id_projeto'"
+
 ?>
 
 <!--Aqui é o html normal-->
@@ -20,12 +19,40 @@ $query = "SELECT * FROM dados_projeto WHERE id_projeto = 'id_projeto'"
 
 <body>
 <h1>Olá mundo</h1>
-
-
-<!--Como abaixo, é necessário inserir as variáveis dentro de uma tag php-->
 <?php
-	echo $id_projeto;
+$id_projeto2 = $_GET['id'];
+
+$query = "SELECT * FROM dados_projeto WHERE id_projeto = $id_projeto2";
+  $result = $mysqli->query($query);
+
 ?>
+ <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Nome do Projeto</th>
+        <th>Técnico Responsável</th>
+        
+		
+      </tr>
+    </thead>
+    <tbody>
+	
+	<?php
+	
+	foreach ($result as $fila) {
+	  
+	?>
+	
+	<tr>
+        <td><?php echo $fila['proj_nome']?></td>
+        <td><?php echo $fila['proj_tecResponsavel']?></td>
+		<!--aqui se coloca as variáveis para serem passadas para a outra página, creio que devemos colocar uma página php apenas para receber e passar ao pdf como POST-->
+        
+      </tr>
+     <?php
+	
+  }
+	 ?>
 
 
 
